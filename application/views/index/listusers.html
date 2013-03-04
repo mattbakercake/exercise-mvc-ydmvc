@@ -1,0 +1,15 @@
+<div>
+    <p>This page shows data collected from a database by the model and 
+    injected into the view by the controller:</p>
+
+    <?php echo $this->partial('dblist.html',$userData); ?>
+
+</div>
+<div>
+    <h3>Add a new user</h3>
+
+    <?php echo $this->partial('userform.html',$fruits); ?>
+
+</div>        
+<div><p><a href="<?php echo SITE_ROOT?>/index/index">Back to the default page</a></p></div>
+

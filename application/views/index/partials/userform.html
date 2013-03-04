@@ -1,0 +1,16 @@
+<form method="post" action="adduser"> 
+    <label for="firstname">Firstname: </label>
+    <input type="text" name="firstname" /><br/>
+    <label for="surname">Surname:</label>
+    <input type="text" name="surname" /><br />
+    <label for="fruit">Favourite Fruit</label>
+    <select name="fruit">
+        <?php
+            foreach ($partialData as $fruit) {
+                echo "<option value='$fruit[id]'>$fruit[name]</option>";
+            }
+        ?>
+    </select>
+    <input type="submit" name="submit" Value="Add User" />
+ </form>
+
