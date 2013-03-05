@@ -105,23 +105,21 @@ class View {
     /**
      * Public function allows complex view code e.g. forms or loops to be split
      * out into view partial files and included in view to simplify code and flow.
-     * A directory named 'partials' needs to be created inside the folder for the
-     * current view and the partail placed in there.
+     * place file in folder called 'partials' in the Views folder. $partialData
+     * can be referenced in the partial file to access data passed to it
      * 
      * @example<br/>
      *  ##in html view file##<br/>
      *  <?php echo $this->partial('partialname.html',$fruits); ?><br/>
      * 
      * @param String $filename Name of partial file
-     * @param Mixed $partialData Data to be passed into partial e.g. array or string
+     * @param Mixed $partialData Data to be referenced in partial e.g. array or string
      * @return String A string containing the buffered output of the partial script
      * @throws Exception
      * 
-     * @todo Make partial directory global at the top level of views directory
-     * so accessible by all views.
      */
     public function partial($filename,$partialData) {
-        $file = SERVER_ROOT . '/application/views/' . strtolower($this->viewFolder) . '/partials/' . $filename;
+        $file = SERVER_ROOT . '/application/views/partials/' . $filename;
         if (file_exists($file)) {
             ob_start(); //start output buffering
             include($file); //open the partial file
