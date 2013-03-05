@@ -3,19 +3,19 @@
 ini_set('display_errors', '1');
 
 //Server document path to the application
-define('SERVER_ROOT', '/web');
+define('SERVER_ROOT', '/web/vhosts/dev/ydmvc');
 
 //Set the base application url
-define('SITE_ROOT', 'http://localhost');
+define('SITE_ROOT', 'http://dev.internal.mikesierra.plus.com/ydmvc');
 
 //define default controller and method (e.g. landing page)
 define('DEFAULT_CONTROLLER', 'index');
-define('DEFAULT_METHOD', 'index');
+define('DEFAULT_ACTION', 'index');
 
 //Database connection strings
-define('DB_USERNAME', 'username');
-define('DB_PASSWORD', 'password');
-define('DB_NAME', 'dbname');
+define('DB_USERNAME', 'ydmvcuser');
+define('DB_PASSWORD', 'ydmvcuserp455word');
+define('DB_NAME', 'ydmvc');
 define('DB_HOST', 'localhost');
 //DSN for PDO modify for different DB types
 $dsn = 'mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=UTF8';

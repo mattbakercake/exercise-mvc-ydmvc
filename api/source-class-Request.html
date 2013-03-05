@@ -87,7 +87,7 @@
 </span><span id="2" class="l"><a class="l" href="#2"> 2: </a>  
 </span><span id="3" class="l"><a class="l" href="#3"> 3: </a><span class="php-comment">/**
 </span></span><span id="4" class="l"><a class="l" href="#4"> 4: </a><span class="php-comment"> * The Request class parses the url and extracts the controller,
-</span></span><span id="5" class="l"><a class="l" href="#5"> 5: </a><span class="php-comment"> * method and any parameters being requested
+</span></span><span id="5" class="l"><a class="l" href="#5"> 5: </a><span class="php-comment"> * action and any parameters being requested
 </span></span><span id="6" class="l"><a class="l" href="#6"> 6: </a><span class="php-comment"> *
 </span></span><span id="7" class="l"><a class="l" href="#7"> 7: </a><span class="php-comment"> * @version 0.1
 </span></span><span id="8" class="l"><a class="l" href="#8"> 8: </a><span class="php-comment"> * @since 26-02-2013
@@ -103,11 +103,11 @@
 </span></span><span id="18" class="l"><a class="l" href="#18">18: </a><span class="php-comment">     */</span>
 </span><span id="19" class="l"><a class="l" href="#19">19: </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$controller" href="#$controller">$controller</a></span> = DEFAULT_CONTROLLER;
 </span><span id="20" class="l"><a class="l" href="#20">20: </a>     <span class="php-comment">/**
-</span></span><span id="21" class="l"><a class="l" href="#21">21: </a><span class="php-comment">     * The Method being called. Defaults to DEFAULT_METHOD
+</span></span><span id="21" class="l"><a class="l" href="#21">21: </a><span class="php-comment">     * The Method being called. Defaults to DEFAULT_ACTION
 </span></span><span id="22" class="l"><a class="l" href="#22">22: </a><span class="php-comment">     * set in settings.inc.php file
 </span></span><span id="23" class="l"><a class="l" href="#23">23: </a><span class="php-comment">     * @var string 
 </span></span><span id="24" class="l"><a class="l" href="#24">24: </a><span class="php-comment">     */</span>
-</span><span id="25" class="l"><a class="l" href="#25">25: </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$method" href="#$method">$method</a></span> = DEFAULT_METHOD;
+</span><span id="25" class="l"><a class="l" href="#25">25: </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$action" href="#$action">$action</a></span> = DEFAULT_ACTION;
 </span><span id="26" class="l"><a class="l" href="#26">26: </a>     <span class="php-comment">/**
 </span></span><span id="27" class="l"><a class="l" href="#27">27: </a><span class="php-comment">     * An array of parameters extracted from url
 </span></span><span id="28" class="l"><a class="l" href="#28">28: </a><span class="php-comment">     * @var array 
@@ -129,7 +129,7 @@
 </span><span id="44" class="l"><a class="l" href="#44">44: </a>    }
 </span><span id="45" class="l"><a class="l" href="#45">45: </a>    
 </span><span id="46" class="l"><a class="l" href="#46">46: </a>    <span class="php-comment">/**
-</span></span><span id="47" class="l"><a class="l" href="#47">47: </a><span class="php-comment">     * private function extracts controller,method and parameters
+</span></span><span id="47" class="l"><a class="l" href="#47">47: </a><span class="php-comment">     * private function extracts controller,action and parameters
 </span></span><span id="48" class="l"><a class="l" href="#48">48: </a><span class="php-comment">     * from string separated by &quot;/&quot;
 </span></span><span id="49" class="l"><a class="l" href="#49">49: </a><span class="php-comment">     * @param string $url
 </span></span><span id="50" class="l"><a class="l" href="#50">50: </a><span class="php-comment">     */</span>
@@ -143,7 +143,7 @@
 </span><span id="58" class="l"><a class="l" href="#58">58: </a>        }
 </span><span id="59" class="l"><a class="l" href="#59">59: </a>        
 </span><span id="60" class="l"><a class="l" href="#60">60: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$parameters</span>[<span class="php-num">0</span>])) {
-</span><span id="61" class="l"><a class="l" href="#61">61: </a>           <span class="php-var">$this</span>-&gt;method = <span class="php-keyword2">array_shift</span>(<span class="php-var">$parameters</span>); 
+</span><span id="61" class="l"><a class="l" href="#61">61: </a>           <span class="php-var">$this</span>-&gt;action = <span class="php-keyword2">array_shift</span>(<span class="php-var">$parameters</span>); 
 </span><span id="62" class="l"><a class="l" href="#62">62: </a>        }
 </span><span id="63" class="l"><a class="l" href="#63">63: </a>        
 </span><span id="64" class="l"><a class="l" href="#64">64: </a>         <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$parameters</span>)) {

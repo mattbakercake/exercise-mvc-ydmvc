@@ -90,9 +90,9 @@
 <p>The FrontController class is the heart of the framework interpreting requests
 and dispatching appropriate controllers</p>
 
-<p>It calls the Request Class to extract parameters from the url and
-instantiates the appopriate controller, including the method and any
-parameters</p>
+<p>It determines whether controller/action/parameters have been passed to it and
+either sets these values or calls the Request Class to extract the values from
+the url. The run method dispatches the controller.</p>
 
 	</div>
 
@@ -116,10 +116,10 @@ parameters</p>
 				Matt Baker &lt;<a
 href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 				<b>Version:</b>
-				0.1<br />
+				0.2<br />
 				<b>Since:</b>
-				26-02-2013<br />
-		<b>Located at</b> <a href="source-class-FrontController.html#2-65" title="Go to source code">application/ydmvc_core/FrontController.php</a><br />
+				05-03-2013<br />
+		<b>Located at</b> <a href="source-class-FrontController.html#2-105" title="Go to source code">application/ydmvc_core/FrontController.php</a><br />
 	</div>
 
 
@@ -137,31 +137,50 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-FrontController.html#34-54" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-FrontController.html#34-78" title="Go to source code">__construct</a>( <span>array <var>$options</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			
-<p>Constructor instantiates request object to gather request parameters then
-calls appropriate controller</p>
+<p>Constructor determines whether controller/action/parameters have been passed
+to it and either sets controller/action/parameters or parses the url to get this
+information.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Constructor instantiates request object to gather request parameters then
-calls appropriate controller</p>
+<p>Constructor determines whether controller/action/parameters have been passed
+to it and either sets controller/action/parameters or parses the url to get this
+information.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$options</var></dt>
+					<dd><code>Array</code><br>$options Array of front controller options e.g.
+('controller'=&gt;'index','action'=&gt;'showusers','params'=&gt;array('1','2'))</dd>
+				</dl></div>
 
 
 
+				<h4>Example</h4>
+				<div class="list">
+						$FrontController = new FrontController();<br />
+##OR##<br />
+$FrontController = new FrontController(array(<br />
+'controller'=&gt;'index',<br />
+'action'=&gt;'showusers',<br />
+'params=&gt;array('1','2')<br />
+));<br />
+<br />
+				</div>
 
 
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="controller" id="_controller">
+	<tr data-order="run" id="_run">
 
 		<td class="attributes"><code>
 			 public 
@@ -171,18 +190,20 @@ calls appropriate controller</p>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_controller">#</a>
-		<code><a href="source-class-FrontController.html#56-63" title="Go to source code">controller</a>( )</code>
+		<a class="anchor" href="#_run">#</a>
+		<code><a href="source-class-FrontController.html#80-103" title="Go to source code">run</a>( )</code>
 
 		<div class="description short">
 			
-<p>Creates a new instance of the controller being called by the url request</p>
+<p>Runs the front controller for request. Creates a new instance of the
+controller and action that has been set by the url request</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Creates a new instance of the controller being called by the url request</p>
+<p>Runs the front controller for request. Creates a new instance of the
+controller and action that has been set by the url request</p>
 
 
 

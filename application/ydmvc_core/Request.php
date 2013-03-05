@@ -2,7 +2,7 @@
   
 /**
  * The Request class parses the url and extracts the controller,
- * method and any parameters being requested
+ * action and any parameters being requested
  *
  * @version 0.1
  * @since 26-02-2013
@@ -18,11 +18,11 @@ class Request {
      */
     public $controller = DEFAULT_CONTROLLER;
      /**
-     * The Method being called. Defaults to DEFAULT_METHOD
+     * The Method being called. Defaults to DEFAULT_ACTION
      * set in settings.inc.php file
      * @var string 
      */
-    public $method = DEFAULT_METHOD;
+    public $action = DEFAULT_ACTION;
      /**
      * An array of parameters extracted from url
      * @var array 
@@ -44,7 +44,7 @@ class Request {
     }
     
     /**
-     * private function extracts controller,method and parameters
+     * private function extracts controller,action and parameters
      * from string separated by "/"
      * @param string $url
      */
@@ -58,7 +58,7 @@ class Request {
         }
         
         if (!empty($parameters[0])) {
-           $this->method = array_shift($parameters); 
+           $this->action = array_shift($parameters); 
         }
         
          if (!empty($parameters)) {

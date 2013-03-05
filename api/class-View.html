@@ -116,7 +116,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 				0.1<br />
 				<b>Since:</b>
 				26-02-2013<br />
-		<b>Located at</b> <a href="source-class-View.html#3-136" title="Go to source code">application/ydmvc_core/View.php</a><br />
+		<b>Located at</b> <a href="source-class-View.html#3-134" title="Go to source code">application/ydmvc_core/View.php</a><br />
 	</div>
 
 
@@ -267,23 +267,23 @@ index.html</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_partial">#</a>
-		<code><a href="source-class-View.html#105-134" title="Go to source code">partial</a>( <span>String <var>$filename</var></span>, <span>Mixed <var>$partialData</var></span> )</code>
+		<code><a href="source-class-View.html#105-132" title="Go to source code">partial</a>( <span>String <var>$filename</var></span>, <span>Mixed <var>$partialData</var></span> )</code>
 
 		<div class="description short">
 			
 <p>Public function allows complex view code e.g. forms or loops to be split out
-into view partial files and included in view to simplify code and flow. A
-directory named 'partials' needs to be created inside the folder for the current
-view and the partail placed in there.</p>
+into view partial files and included in view to simplify code and flow. place
+file in folder called 'partials' in the Views folder. $partialData can be
+referenced in the partial file to access data passed to it</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
 <p>Public function allows complex view code e.g. forms or loops to be split out
-into view partial files and included in view to simplify code and flow. A
-directory named 'partials' needs to be created inside the folder for the current
-view and the partail placed in there.</p>
+into view partial files and included in view to simplify code and flow. place
+file in folder called 'partials' in the Views folder. $partialData can be
+referenced in the partial file to access data passed to it</p>
 
 
 
@@ -292,7 +292,7 @@ view and the partail placed in there.</p>
 					<dt><var>$filename</var></dt>
 					<dd><code>String</code><br>$filename Name of partial file</dd>
 					<dt><var>$partialData</var></dt>
-					<dd><code>Mixed</code><br>$partialData Data to be passed into partial e.g. array or string</dd>
+					<dd><code>Mixed</code><br>$partialData Data to be referenced in partial e.g. array or string</dd>
 				</dl></div>
 
 				<h4>Returns</h4>

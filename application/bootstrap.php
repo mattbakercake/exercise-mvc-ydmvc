@@ -9,5 +9,6 @@ spl_autoload_register('Autoload::controllerLoader');
 spl_autoload_register('Autoload::modelLoader');
 
 //call the router to load the controller
-new FrontController();
+$frontController = new FrontController();
+$frontController->run();
 ?>
