@@ -1,10 +1,8 @@
-<div>
-<?php
-foreach ($partialData as $user) {
-        echo "Uid: $user[id] | 
-        First Name: $user[firstname] | 
-        Surname: $user[surname] | 
-        Favourite Fruit: $user[name]<br />";
-}
-?>
-</div>
+<table>
+    <tr><th>User Id</th><th>First name</th><th>Surname</th><th>Favourite Fruit</th></tr>
+    <?php
+    foreach ($partialData as $user) {
+            echo "<tr><td>$user[id]</td><td>$user[firstname]</td><td>$user[surname]</td><td>$user[name]</td></tr>";
+    }
+    ?>
+</table>

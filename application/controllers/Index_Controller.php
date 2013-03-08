@@ -26,13 +26,12 @@ class Index_Controller extends Controller {
     public function adduser() {
         $userData = $_POST;
         $result = $this->model->addUserDetails($userData);
-        if ($result) {
-            $message = "User Added Successfully";
-            $this->view->title = "Result - User Add";
-            $this->view->setData('message',$message);
-            $this->view->load('adduser.html');
-        }
-        
+        return $result;      
+    }
+    
+    public function updateUserTable() {
+        $userData = $this->model->getAllUserDetails();
+        echo $this->view->partial('dblist.html',$userData);
     }
 
 }
