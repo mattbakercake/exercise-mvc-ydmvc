@@ -18,12 +18,12 @@ class Model {
      * Instance of database handle object
      * @var Object 
      */
-    protected $dbHandle;
+    protected $_dbHandle;
     /**
      * String containing SQL statement to be executed
      * @var String
      */
-    protected $sql;
+    protected $_sql;
     /**
      * String containing any error messages
      * @var String
@@ -42,11 +42,11 @@ class Model {
     * model or throws an exception 
     * @global String $dsn
     */
-    protected function initDB() {
+    protected function _initDB() {
         global $dsn; //set in settings.inc.php
         try {
-            $this->dbHandle = new PDO($dsn, DB_USERNAME, DB_PASSWORD);
-            $this->dbHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->_dbHandle = new PDO($dsn, DB_USERNAME, DB_PASSWORD);
+            $this->_dbHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $e) {
             die('Database Connection Error: ' . $e->getMessage());
            
@@ -56,8 +56,8 @@ class Model {
     /**
      * protected function that releases database handle
      */
-    protected function quitDB() {
-        $this->dbHandle = NULL;
+    protected function _quitDB() {
+        $this->_dbHandle = NULL;
     }
     
     /**
@@ -65,8 +65,8 @@ class Model {
      * string to be executed
      * @param String $sql
      */
-    protected function setSql($sql) {
-        $this->sql = $sql;
+    protected function _setSql($sql) {
+        $this->_sql = $sql;
     }
     
     /**
@@ -81,15 +81,15 @@ class Model {
      * @return Array
      * @throws Exception
      */
-    protected function getAll() {
-        $this->initDB();
-        if (!$this->sql) {
+    protected function _getAll() {
+        $this->_initDB();
+        if (!$this->_sql) {
             throw new Exception(" No SQL query passed to getAll()! ");
         }
-        $query = $this->dbHandle->prepare($this->sql);
+        $query = $this->_dbHandle->prepare($this->_sql);
         $query->execute();
         return $query->fetchAll();
-        $this->quitDB();
+        $this->_quitDB();
     }
     
     /**
@@ -109,16 +109,16 @@ class Model {
      * @return Boolean
      * @throws Exception
      */
-    protected function insertAll($userData) {
-        $userData = $this->keysToPlaceholders($userData);
-        $this->initDB();
-        if (!$this->sql) {
+    protected function _insertAll($userData) {
+        $userData = $this->_keysToPlaceholders($userData);
+        $this->_initDB();
+        if (!$this->_sql) {
             throw new Exception(" No SQL query passed to insertAll()! ");
         }
-        $query = $this->dbHandle->prepare($this->sql);
+        $query = $this->_dbHandle->prepare($this->_sql);
         try {
             $result = $query->execute($userData);
-            $this->errorInfo = $this->dbHandle->errorInfo();
+            $this->errorInfo = $this->_dbHandle->errorInfo();
             return $result;
         } catch(PDOException $e) {
             print "Error inserting data into database: " . $e->getMessage();
@@ -133,7 +133,7 @@ class Model {
      * @param Array $assocArray
      * @return Array
      */
-    private function keysToPlaceholders($assocArray) {
+    private function _keysToPlaceholders($assocArray) {
         $convertedArray = array();
         foreach ($assocArray as $key => $value) {
            $convertedArray[':'.$key] = $value;

@@ -17,17 +17,17 @@ class View {
      * String containing name of the view for the controller
      * @var string 
      */
-    protected $viewFolder;
+    protected $_viewFolder;
     /**
      * String containing the name of the view file. Defaults to index.html
      * @var String
      */
-    protected $file = "index.html";
+    protected $_file = "index.html";
     /**
      * Array of arrays of data passed to the view
      * @var Array 
      */
-    protected $viewData = array();
+    protected $_viewData = array();
     /**
      * String containing HTML Title for view to be displayed in browser header.
      * Set in controller or model
@@ -45,7 +45,7 @@ class View {
      * @param String $viewName
      */
     function __construct($viewName) {
-        $this->viewFolder = $viewName;
+        $this->_viewFolder = $viewName;
     }
     
     /**
@@ -60,15 +60,15 @@ class View {
      */
     public function load($file = NULL) {
         if (is_null($file)) {
-            $this->file = "index.html";
+            $this->_file = "index.html";
         } else {
-            $this->file = $file; 
+            $this->_file = $file; 
         }
         $template = SERVER_ROOT . '/application/views/template.html';
-        $file = SERVER_ROOT . '/application/views/' . strtolower($this->viewFolder) . '/' . $this->file;
+        $file = SERVER_ROOT . '/application/views/' . strtolower($this->_viewFolder) . '/' . $this->_file;
         if (file_exists($template) && USE_TEMPLATE) {
             if (file_exists($file)) {
-                extract($this->viewData);
+                extract($this->_viewData);
                 ob_start();
                 include $template;
                 $output = ob_get_contents();
@@ -78,7 +78,7 @@ class View {
                 throw new Exception($file . ' doesn\'t exist ');
             }
         } elseif (file_exists($file)) {
-            extract($this->viewData);
+            extract($this->_viewData);
             ob_start();
             include $file;
             $output = ob_get_contents();
@@ -99,7 +99,7 @@ class View {
      * @param Mixed $value
      */
     public function setData($key,$value) {
-        $this->viewData[$key] = $value;
+        $this->_viewData[$key] = $value;
     }
     
     /**

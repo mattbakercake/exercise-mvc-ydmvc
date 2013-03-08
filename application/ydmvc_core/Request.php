@@ -32,15 +32,15 @@ class Request {
      * Url that has been called
      * @var string 
      */
-    private $url = NULL;
+    private $_url = NULL;
     
     /**
      * Constructor strips url of harmful html entities and extracts the requested 
      * Controller, Method and Parameters 
      */
     function __construct() {
-        $this->cleanUrl();
-        $this->request($this->url);
+        $this->_cleanUrl();
+        $this->_request($this->_url);
     }
     
     /**
@@ -48,7 +48,7 @@ class Request {
      * from string separated by "/"
      * @param string $url
      */
-    private function request($url) {
+    private function _request($url) {
         $parameters = explode("/", $url);//split url into array
         
         //check array key for value - set class 
@@ -70,12 +70,12 @@ class Request {
      * Private function extracts url querystring and removes
      * unsafe html entites to prevent XSS
      */
-    private function cleanUrl() {
+    private function _cleanUrl() {
         $url = NULL;
         if (isset($_GET['url'])) {
             $url = htmlentities(preg_replace('/.php/', '', $_GET['url']));
         }
-        $this->url = $url;
+        $this->_url = $url;
     }
    
 }

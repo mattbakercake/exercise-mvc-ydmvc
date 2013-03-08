@@ -15,8 +15,8 @@ class Index extends Model{
                   Fruit AS f on u.fruit = f.id
                 ORDER BY u.id ASC";
         
-        $this->setSql($sql);
-        $data = $this->getAll();
+        $this->_setSql($sql);
+        $data = $this->_getAll();
         
         if (empty($data)) {
             return false;
@@ -38,8 +38,8 @@ class Index extends Model{
                 WHERE u.id = ".$uid." 
                 ORDER BY u.id ASC";
         
-        $this->setSql($sql);
-        $data = $this->getAll();       
+        $this->_setSql($sql);
+        $data = $this->_getAll();       
         if (empty($data)) {
             return false;
         }
@@ -54,8 +54,8 @@ class Index extends Model{
                   Fruit
                 ORDER BY id ASC";
         
-        $this->setSql($sql);
-        $data = $this->getAll();       
+        $this->_setSql($sql);
+        $data = $this->_getAll();       
         if (empty($data)) {
             return false;
         }
@@ -72,8 +72,8 @@ class Index extends Model{
                 (:firstname,
                 :surname,:fruit)";
         
-        $this->setSql($sql);
-        $result = $this->insertAll($userData);
+        $this->_setSql($sql);
+        $result = $this->_insertAll($userData);
         return $result;
     }
 

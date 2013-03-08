@@ -19,17 +19,17 @@ class FrontController {
      * The controller being called
      * @var string
      */
-    private $controller;
+    private $_controller;
     /**
      * The action being called
      * @var string
      */
-    private $action;
+    private $_action;
     /**
      * Array of parameters being passed to controller
      * @var array 
      */
-    private $params = array();
+    private $_params = array();
     
     /**
      * Constructor determines whether controller/action/parameters have been
@@ -55,23 +55,23 @@ class FrontController {
         
             //set controller,action and value properties
             if (!is_null($request->controller)) {
-                $this->controller = $request->controller;
+                $this->_controller = $request->controller;
              }
             if (isset($request->action)) {
-                $this->action = $request->action;
+                $this->_action = $request->action;
             }
             if (isset($request->params)) {
-                $this->params = $request->params;
+                $this->_params = $request->params;
             }
         } else { //if options have been passed to object set them
            if (isset($options['controller'])) {
-               $this->controller = $options['controller'];
+               $this->_controller = $options['controller'];
            }
            if (isset($options['action'])) {
-               $this->action = $options['action'];
+               $this->_action = $options['action'];
            }
            if (isset($options['params'])) {
-               $this->params = $options['params'];
+               $this->_params = $options['params'];
            }
            
         }
@@ -83,11 +83,11 @@ class FrontController {
      * by the url request
      */
     public function run() {
-      if (isset($this->controller)) { //check controller is set
-          if (isset($this->action)) { //check action is set
-                $className = ucwords($this->controller) . '_Controller';
+      if (isset($this->_controller)) { //check controller is set
+          if (isset($this->_action)) { //check action is set
+                $className = ucwords($this->_controller) . '_Controller';
                 if (class_exists($className)) { //check class file exists
-                    new $className($this->action,$this->params); //instantiate 
+                    new $className($this->_action,$this->_params); //instantiate 
                 } else {
                     //no controller class defined
                     throw new Exception(' Controller class not defined: '.$className. ' ');

@@ -5,33 +5,33 @@
 class Index_Controller extends Controller {
     
     public function index() {
-        $this->view->title = "Welcome to the Framework";
-        $this->view->setData('remoteAddress', $_SERVER['REMOTE_ADDR']);
-        $this->view->load();
+        $this->_view->title = "Welcome to the Framework";
+        $this->_view->setData('remoteAddress', $_SERVER['REMOTE_ADDR']);
+        $this->_view->load();
     }
     
     public function dbfetch() {
-        if(!empty($this->urlValues[0]) && is_numeric($this->urlValues[0])) {
-            $userData = $this->model->getUidUserDetails($this->urlValues[0]);
+        if(!empty($this->_urlValues[0]) && is_numeric($this->_urlValues[0])) {
+            $userData = $this->_model->getUidUserDetails($this->_urlValues[0]);
         } else {
-            $userData = $this->model->getAllUserDetails();
+            $userData = $this->_model->getAllUserDetails();
         }
-        $fruits = $this->model->getAllFruit();
-        $this->view->title = "Show/Add Users";
-        $this->view->setData('userData', $userData);
-        $this->view->setData('fruits', $fruits);
-        $this->view->load('listusers.html');
+        $fruits = $this->_model->getAllFruit();
+        $this->_view->title = "Show/Add Users";
+        $this->_view->setData('userData', $userData);
+        $this->_view->setData('fruits', $fruits);
+        $this->_view->load('listusers.html');
     }
     
     public function adduser() {
         $userData = $_POST;
-        $result = $this->model->addUserDetails($userData);
+        $result = $this->_model->addUserDetails($userData);
         return $result;      
     }
     
     public function updateUserTable() {
-        $userData = $this->model->getAllUserDetails();
-        echo $this->view->partial('dblist.html',$userData);
+        $userData = $this->_model->getAllUserDetails();
+        echo $this->_view->partial('dblist.html',$userData);
     }
 
 }

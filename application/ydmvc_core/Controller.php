@@ -20,28 +20,28 @@ class Controller {
      * Instance of model object for current request
      * @var Object
      */
-    protected $model;
+    protected $_model;
     /**
      * Instance of view object for current request
      * @var Object
      */
-    protected $view;
+    protected $_view;
     /**
      * Array containing parameters passed to controller
      * @var Array 
      */
-    protected $urlValues;
+    protected $_urlValues;
     /**
      * String constaining the name of current model/view
      * class
      * @var string
      */
-    private $modelViewName;
+    private $_modelViewName;
     /**
      * String containing the name of the current controller
      * @var string 
      */
-    private $controllerName;
+    private $_controllerName;
     
 
     /**
@@ -51,57 +51,57 @@ class Controller {
      * @param array $urlValues
      */
     function __construct($method,$urlValues) {
-        $this->setControllerName();
-        $this->setModelViewName();
-        $this->setUrlValues($urlValues);
-        $this->loadModel();
-        $this->loadView();
-        $this->runControllerMethod($method);
+        $this->_setControllerName();
+        $this->_setModelViewName();
+        $this->_setUrlValues($urlValues);
+        $this->_loadModel();
+        $this->_loadView();
+        $this->_runControllerMethod($method);
     }
     
     /**
      * Instantiates current model object
      */
-    protected function loadModel() {
-        $this->model = new $this->modelViewName;
+    protected function _loadModel() {
+        $this->_model = new $this->_modelViewName;
     }
     
     /**
      * Instantiates current view object
      */
-    protected function loadView() {
-        $this->view = new View($this->modelViewName);
+    protected function _loadView() {
+        $this->_view = new View($this->_modelViewName);
     }
     
     /**
      * runs controller method
      * @param string $method
      */
-    protected function runControllerMethod($method) {
+    protected function _runControllerMethod($method) {
         $this->$method();
     }
     
     /**
      * sets name of current controller
      */
-    private function setControllerName() {
-        $this->controllerName = get_called_class();
+    private function _setControllerName() {
+        $this->_controllerName = get_called_class();
     }
     
     /**
      * sets name of current model/view
      */
-    private function setModelViewName() {
-        $modelViewName = preg_replace('/_Controller$/', '', $this->controllerName);
-        $this->modelViewName = $modelViewName;
+    private function _setModelViewName() {
+        $modelViewName = preg_replace('/_Controller$/', '', $this->_controllerName);
+        $this->_modelViewName = $modelViewName;
     }
     
     /**
      * sets array of parameters from url
      * @param array $urlValues
      */
-    private function setUrlValues($urlValues) {
-        $this->urlValues = $urlValues;
+    private function _setUrlValues($urlValues) {
+        $this->_urlValues = $urlValues;
     }
 
 }
