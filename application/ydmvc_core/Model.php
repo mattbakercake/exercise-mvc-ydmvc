@@ -15,6 +15,14 @@
 abstract class Model {
 
     /**
+     * 
+     */
+    protected $_view;
+    /**
+     * 
+     */
+    protected $_controller;
+    /**
      * Instance of database handle object
      * @var Object 
      */
@@ -31,10 +39,24 @@ abstract class Model {
     public $errorInfo;
     
     /**
-     * Constructor currently does nothing
+     * Constructor sets reference to currrent view and controller objects
      */
-    function __construct() {
-        
+    function __construct($view = NULL,$controller = NULL) {
+        //set view object if passed
+        if (is_object($view)) {
+            $this->_setView($view);
+        }
+        //set controller object if passed
+        if (is_object($controller)) {
+            $this->_setController($controller);
+        }
+        //run model action to match controller action if exists
+        if (is_object($this->_view) && is_object($this->_controller)) {
+            $actionName = $this->_controller->actionName;
+            if (method_exists(get_called_class(),$actionName)) {
+                $this->$actionName();
+            }
+        }
     }
     
    /**
@@ -141,7 +163,13 @@ abstract class Model {
         return $convertedArray;
     }
     
+    private function _setView($view) {
+        $this->_view = $view;
+    }
     
+    private function _setController($controller) {
+        $this->_controller = $controller;
+    }
     
 
 }

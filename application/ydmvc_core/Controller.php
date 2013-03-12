@@ -16,6 +16,7 @@
  */
 abstract class Controller {
     
+    
     /**
      * Instance of model object for current request
      * @var Object
@@ -42,22 +43,27 @@ abstract class Controller {
      * @var string 
      */
     private $_controllerName;
+    /**
+     * 
+     */
+    public $actionName;
     
 
     /**
      * Constructor instantiates model and view objects and
      * calls the controller method to be run
-     * @param string $method
+     * @param string $action
      * @param array $urlValues
      */
-    function __construct($method,$urlValues) {
+    function __construct($action,$urlValues) {
         $this->_setControllerName();
         $this->_setModelViewName();
+        $this->_setActionName($action);
         $this->_setUrlValues($urlValues);
-        $this->_loadModel();
         $this->_loadView();
+        $this->_loadModel();
         if (is_object($this->_model)) {
-            $this->_runControllerMethod($method);
+            $this->_runControllerAction($this->actionName);
         }
     }
     
@@ -81,10 +87,10 @@ abstract class Controller {
     
     /**
      * runs controller method
-     * @param string $method
+     * @param string $action
      */
-    protected function _runControllerMethod($method) {
-        $this->$method();
+    protected function _runControllerAction($action) {
+        $this->$action();
     }
     
     /**
@@ -92,6 +98,13 @@ abstract class Controller {
      */
     private function _setControllerName() {
         $this->_controllerName = get_called_class();
+    }
+    
+    /**
+     * sets name of current controller action
+     */
+    private function _setActionName($action) {
+        $this->actionName = $action;
     }
     
     /**
@@ -119,7 +132,7 @@ abstract class Controller {
             throw new Exception ($modelName.' class is not defined');
         }
         
-        $this->_model = new $modelName;
+        $this->_model = new $modelName($this->_view,$this);
             
     }
  
