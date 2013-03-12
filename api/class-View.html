@@ -7,7 +7,7 @@
 	<title>Class View</title>
 
 	<script type="text/javascript" src="resources/combined.js?1145318285"></script>
-	<script type="text/javascript" src="elementlist.js?1705448497"></script>
+	<script type="text/javascript" src="elementlist.js?772600278"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -36,6 +36,7 @@
 			<ul>
 				<li><a href="class-Autoload.html">Autoload</a></li>
 				<li><a href="class-Controller.html">Controller</a></li>
+				<li><a href="class-Error.html">Error</a></li>
 				<li><a href="class-FrontController.html">FrontController</a></li>
 				<li><a href="class-Model.html">Model</a></li>
 				<li><a href="class-Request.html">Request</a></li>
@@ -179,14 +180,14 @@ from the correct view folder</p>
 		<div class="description short">
 			
 <p>Public function launches the specified view from the controller. Defaults to
-index.html</p>
+index.html of no file specified.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
 <p>Public function launches the specified view from the controller. Defaults to
-index.html</p>
+index.html of no file specified.</p>
 
 
 
@@ -204,7 +205,7 @@ index.html</p>
 
 				<h4>Example</h4>
 				<div class="list">
-						$this-&gt;view-&gt;load(someview.html);<br />
+						$this-&gt;view-&gt;load('someview.html');<br />
 				</div>
 
 
@@ -331,18 +332,18 @@ referenced in the partial file to access data passed to it</p>
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="viewFolder" id="$viewFolder">
+	<tr data-order="_viewFolder" id="$_viewFolder">
 		<td class="attributes"><code>
 			protected  
 			string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-View.html#16-20" title="Go to source code"><var>$viewFolder</var></a>
+				<a href="source-class-View.html#16-20" title="Go to source code"><var>$_viewFolder</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$viewFolder" class="anchor">#</a>
+			<a href="#$_viewFolder" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -358,18 +359,18 @@ referenced in the partial file to access data passed to it</p>
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="file" id="$file">
+	<tr data-order="_file" id="$_file">
 		<td class="attributes"><code>
 			protected  
 			String
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-View.html#21-25" title="Go to source code"><var>$file</var></a>
+				<a href="source-class-View.html#21-25" title="Go to source code"><var>$_file</var></a>
 		</td>
 		<td class="value"><code><span class="php-quote">&quot;index.html&quot;</span></code></td>
 		<td class="description"><div>
-			<a href="#$file" class="anchor">#</a>
+			<a href="#$_file" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -385,18 +386,18 @@ referenced in the partial file to access data passed to it</p>
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="viewData" id="$viewData">
+	<tr data-order="_viewData" id="$_viewData">
 		<td class="attributes"><code>
 			protected  
 			Array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-View.html#26-30" title="Go to source code"><var>$viewData</var></a>
+				<a href="source-class-View.html#26-30" title="Go to source code"><var>$_viewData</var></a>
 		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
-			<a href="#$viewData" class="anchor">#</a>
+			<a href="#$_viewData" class="anchor">#</a>
 
 			<div class="description short">
 				

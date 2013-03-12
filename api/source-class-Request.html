@@ -8,7 +8,7 @@
 	<title>File application/ydmvc_core/Request.php</title>
 
 	<script type="text/javascript" src="resources/combined.js?1145318285"></script>
-	<script type="text/javascript" src="elementlist.js?1705448497"></script>
+	<script type="text/javascript" src="elementlist.js?772600278"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -37,6 +37,7 @@
 			<ul>
 				<li><a href="class-Autoload.html">Autoload</a></li>
 				<li><a href="class-Controller.html">Controller</a></li>
+				<li><a href="class-Error.html">Error</a></li>
 				<li><a href="class-FrontController.html">FrontController</a></li>
 				<li><a href="class-Model.html">Model</a></li>
 				<li class="active"><a href="class-Request.html">Request</a></li>
@@ -117,15 +118,15 @@
 </span></span><span id="32" class="l"><a class="l" href="#32">32: </a><span class="php-comment">     * Url that has been called
 </span></span><span id="33" class="l"><a class="l" href="#33">33: </a><span class="php-comment">     * @var string 
 </span></span><span id="34" class="l"><a class="l" href="#34">34: </a><span class="php-comment">     */</span>
-</span><span id="35" class="l"><a class="l" href="#35">35: </a>    <span class="php-keyword1">private</span> <span class="php-var"><a id="$url" href="#$url">$url</a></span> = <span class="php-keyword1">NULL</span>;
+</span><span id="35" class="l"><a class="l" href="#35">35: </a>    <span class="php-keyword1">private</span> <span class="php-var"><a id="$_url" href="#$_url">$_url</a></span> = <span class="php-keyword1">NULL</span>;
 </span><span id="36" class="l"><a class="l" href="#36">36: </a>    
 </span><span id="37" class="l"><a class="l" href="#37">37: </a>    <span class="php-comment">/**
 </span></span><span id="38" class="l"><a class="l" href="#38">38: </a><span class="php-comment">     * Constructor strips url of harmful html entities and extracts the requested 
 </span></span><span id="39" class="l"><a class="l" href="#39">39: </a><span class="php-comment">     * Controller, Method and Parameters 
 </span></span><span id="40" class="l"><a class="l" href="#40">40: </a><span class="php-comment">     */</span>
 </span><span id="41" class="l"><a class="l" href="#41">41: </a>    <span class="php-keyword1">function</span> <a id="___construct" href="#___construct">__construct</a>() {
-</span><span id="42" class="l"><a class="l" href="#42">42: </a>        <span class="php-var">$this</span>-&gt;cleanUrl();
-</span><span id="43" class="l"><a class="l" href="#43">43: </a>        <span class="php-var">$this</span>-&gt;request(<span class="php-var">$this</span>-&gt;url);
+</span><span id="42" class="l"><a class="l" href="#42">42: </a>        <span class="php-var">$this</span>-&gt;_cleanUrl();
+</span><span id="43" class="l"><a class="l" href="#43">43: </a>        <span class="php-var">$this</span>-&gt;_request(<span class="php-var">$this</span>-&gt;_url);
 </span><span id="44" class="l"><a class="l" href="#44">44: </a>    }
 </span><span id="45" class="l"><a class="l" href="#45">45: </a>    
 </span><span id="46" class="l"><a class="l" href="#46">46: </a>    <span class="php-comment">/**
@@ -133,7 +134,7 @@
 </span></span><span id="48" class="l"><a class="l" href="#48">48: </a><span class="php-comment">     * from string separated by &quot;/&quot;
 </span></span><span id="49" class="l"><a class="l" href="#49">49: </a><span class="php-comment">     * @param string $url
 </span></span><span id="50" class="l"><a class="l" href="#50">50: </a><span class="php-comment">     */</span>
-</span><span id="51" class="l"><a class="l" href="#51">51: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_request" href="#_request">request</a>(<span class="php-var">$url</span>) {
+</span><span id="51" class="l"><a class="l" href="#51">51: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="__request" href="#__request">_request</a>(<span class="php-var">$url</span>) {
 </span><span id="52" class="l"><a class="l" href="#52">52: </a>        <span class="php-var">$parameters</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">&quot;/&quot;</span>, <span class="php-var">$url</span>);<span class="php-comment">//split url into array</span>
 </span><span id="53" class="l"><a class="l" href="#53">53: </a>        
 </span><span id="54" class="l"><a class="l" href="#54">54: </a>        <span class="php-comment">//check array key for value - set class </span>
@@ -155,12 +156,12 @@
 </span></span><span id="70" class="l"><a class="l" href="#70">70: </a><span class="php-comment">     * Private function extracts url querystring and removes
 </span></span><span id="71" class="l"><a class="l" href="#71">71: </a><span class="php-comment">     * unsafe html entites to prevent XSS
 </span></span><span id="72" class="l"><a class="l" href="#72">72: </a><span class="php-comment">     */</span>
-</span><span id="73" class="l"><a class="l" href="#73">73: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_cleanUrl" href="#_cleanUrl">cleanUrl</a>() {
+</span><span id="73" class="l"><a class="l" href="#73">73: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="__cleanUrl" href="#__cleanUrl">_cleanUrl</a>() {
 </span><span id="74" class="l"><a class="l" href="#74">74: </a>        <span class="php-var">$url</span> = <span class="php-keyword1">NULL</span>;
 </span><span id="75" class="l"><a class="l" href="#75">75: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$_GET</span>[<span class="php-quote">'url'</span>])) {
 </span><span id="76" class="l"><a class="l" href="#76">76: </a>            <span class="php-var">$url</span> = <span class="php-keyword2">htmlentities</span>(<span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/.php/'</span>, <span class="php-quote">''</span>, <span class="php-var">$_GET</span>[<span class="php-quote">'url'</span>]));
 </span><span id="77" class="l"><a class="l" href="#77">77: </a>        }
-</span><span id="78" class="l"><a class="l" href="#78">78: </a>        <span class="php-var">$this</span>-&gt;url = <span class="php-var">$url</span>;
+</span><span id="78" class="l"><a class="l" href="#78">78: </a>        <span class="php-var">$this</span>-&gt;_url = <span class="php-var">$url</span>;
 </span><span id="79" class="l"><a class="l" href="#79">79: </a>    }
 </span><span id="80" class="l"><a class="l" href="#80">80: </a>   
 </span><span id="81" class="l"><a class="l" href="#81">81: </a>}

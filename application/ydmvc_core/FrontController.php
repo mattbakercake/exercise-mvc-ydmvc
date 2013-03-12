@@ -120,8 +120,8 @@ class FrontController {
     }
     
     /**
-     * tries calling _instantiateContoller() function to fire current request 
-     * or throws an error
+     * Dispatches front controller calling _instantiateContoller() function 
+     * to fire current request or throws an error
      */
     public function run() {
         try {

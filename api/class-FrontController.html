@@ -7,7 +7,7 @@
 	<title>Class FrontController</title>
 
 	<script type="text/javascript" src="resources/combined.js?1145318285"></script>
-	<script type="text/javascript" src="elementlist.js?1705448497"></script>
+	<script type="text/javascript" src="elementlist.js?772600278"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -36,6 +36,7 @@
 			<ul>
 				<li><a href="class-Autoload.html">Autoload</a></li>
 				<li><a href="class-Controller.html">Controller</a></li>
+				<li><a href="class-Error.html">Error</a></li>
 				<li class="active"><a href="class-FrontController.html">FrontController</a></li>
 				<li><a href="class-Model.html">Model</a></li>
 				<li><a href="class-Request.html">Request</a></li>
@@ -119,7 +120,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 				0.2<br />
 				<b>Since:</b>
 				05-03-2013<br />
-		<b>Located at</b> <a href="source-class-FrontController.html#2-105" title="Go to source code">application/ydmvc_core/FrontController.php</a><br />
+		<b>Located at</b> <a href="source-class-FrontController.html#2-134" title="Go to source code">application/ydmvc_core/FrontController.php</a><br />
 	</div>
 
 
@@ -191,19 +192,19 @@ $FrontController = new FrontController(array(<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_run">#</a>
-		<code><a href="source-class-FrontController.html#80-103" title="Go to source code">run</a>( )</code>
+		<code><a href="source-class-FrontController.html#122-132" title="Go to source code">run</a>( )</code>
 
 		<div class="description short">
 			
-<p>Runs the front controller for request. Creates a new instance of the
-controller and action that has been set by the url request</p>
+<p>Dispatches front controller calling _instantiateContoller() function to fire
+current request or throws an error</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Runs the front controller for request. Creates a new instance of the
-controller and action that has been set by the url request</p>
+<p>Dispatches front controller calling _instantiateContoller() function to fire
+current request or throws an error</p>
 
 
 

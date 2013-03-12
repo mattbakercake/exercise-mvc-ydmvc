@@ -50,10 +50,10 @@
     
     /**
      * Public function launches the specified view from the controller. Defaults
-     * to index.html
+     * to index.html of no file specified.
      * 
      * @example
-     *  $this->view->load(someview.html);
+     *  $this->view->load('someview.html');
      * 
      * @param string $file
      * @throws Exception
@@ -64,12 +64,12 @@
         } else {
             $this->_file = $file; 
         }
-        $template = SERVER_ROOT . '/application/views/template.html';
-        $file = SERVER_ROOT . '/application/views/' . strtolower($this->_viewFolder) . '/' . $this->_file;
-        if (file_exists($template) && USE_TEMPLATE) {
+        $template = SERVER_ROOT . '/application/views/template.html';//view template location
+        $file = SERVER_ROOT . '/application/views/' . strtolower($this->_viewFolder) . '/' . $this->_file;//view file location
+        if (file_exists($template) && USE_TEMPLATE) { //if template exists and settings say use
             if (file_exists($file)) {
-                extract($this->_viewData);
-                ob_start();
+                extract($this->_viewData);//inject variables into view
+                ob_start();//buffer view content from files
                 include $template;
                 $output = ob_get_contents();
                 ob_end_clean();
@@ -77,9 +77,9 @@
             } else {
                 throw new Exception($file . ' doesn\'t exist ');
             }
-        } elseif (file_exists($file)) {
-            extract($this->_viewData);
-            ob_start();
+        } elseif (file_exists($file)) { //if no template
+            extract($this->_viewData);//inject variables into view
+            ob_start();//buffer view content from file
             include $file;
             $output = ob_get_contents();
             ob_end_clean();

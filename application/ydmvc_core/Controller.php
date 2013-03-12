@@ -10,7 +10,7 @@
  * responsible for instantiating model and view objects
  * 
  * @category Core
- * @version 0.1
+ * @version 0.2
  * @since 26-02-2013
  * @author Matt Baker <dev@mikesierra.net>
  */
@@ -44,7 +44,8 @@ abstract class Controller {
      */
     private $_controllerName;
     /**
-     * 
+     *  String containing the name of the current controller action
+     * @var string
      */
     public $actionName;
     
@@ -62,6 +63,7 @@ abstract class Controller {
         $this->_setUrlValues($urlValues);
         $this->_loadView();
         $this->_loadModel();
+        //if the model object is successfully set call controller action
         if (is_object($this->_model)) {
             $this->_runControllerAction($this->actionName);
         }
@@ -108,7 +110,7 @@ abstract class Controller {
     }
     
     /**
-     * sets name of current model/view
+     * sets basename of current model/view
      */
     private function _setModelViewName() {
         $modelViewName = preg_replace('/_Controller$/', '', $this->_controllerName);

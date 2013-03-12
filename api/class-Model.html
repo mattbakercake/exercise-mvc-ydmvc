@@ -7,7 +7,7 @@
 	<title>Class Model</title>
 
 	<script type="text/javascript" src="resources/combined.js?1145318285"></script>
-	<script type="text/javascript" src="elementlist.js?1705448497"></script>
+	<script type="text/javascript" src="elementlist.js?772600278"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -36,6 +36,7 @@
 			<ul>
 				<li><a href="class-Autoload.html">Autoload</a></li>
 				<li><a href="class-Controller.html">Controller</a></li>
+				<li><a href="class-Error.html">Error</a></li>
 				<li><a href="class-FrontController.html">FrontController</a></li>
 				<li class="active"><a href="class-Model.html">Model</a></li>
 				<li><a href="class-Request.html">Request</a></li>
@@ -102,7 +103,7 @@
 
 
 	<div class="info">
-		
+		<b>Abstract</b><br />
 		
 		
 		
@@ -116,7 +117,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 				0.1<br />
 				<b>Since:</b>
 				26-02-2013<br />
-		<b>Located at</b> <a href="source-class-Model.html#4-147" title="Go to source code">application/ydmvc_core/Model.php</a><br />
+		<b>Located at</b> <a href="source-class-Model.html#4-185" title="Go to source code">application/ydmvc_core/Model.php</a><br />
 	</div>
 
 
@@ -134,17 +135,17 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Model.html#33-38" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Model.html#43-62" title="Go to source code">__construct</a>( <span>mixed <var>$view</var> = <span class="php-keyword1">NULL</span></span>, <span>mixed <var>$controller</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Constructor currently does nothing</p>
+<p>Constructor sets reference to currrent view and controller objects</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Constructor currently does nothing</p>
+<p>Constructor sets reference to currrent view and controller objects</p>
 
 
 
@@ -156,7 +157,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="initDB" id="_initDB">
+	<tr data-order="_initDB" id="__initDB">
 
 		<td class="attributes"><code>
 			 protected 
@@ -166,8 +167,8 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_initDB">#</a>
-		<code><a href="source-class-Model.html#40-54" title="Go to source code">initDB</a>( )</code>
+		<a class="anchor" href="#__initDB">#</a>
+		<code><a href="source-class-Model.html#64-78" title="Go to source code">_initDB</a>( )</code>
 
 		<div class="description short">
 			
@@ -191,7 +192,7 @@ an exception</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="quitDB" id="_quitDB">
+	<tr data-order="_quitDB" id="__quitDB">
 
 		<td class="attributes"><code>
 			 protected 
@@ -201,8 +202,8 @@ an exception</p>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_quitDB">#</a>
-		<code><a href="source-class-Model.html#56-61" title="Go to source code">quitDB</a>( )</code>
+		<a class="anchor" href="#__quitDB">#</a>
+		<code><a href="source-class-Model.html#80-85" title="Go to source code">_quitDB</a>( )</code>
 
 		<div class="description short">
 			
@@ -224,7 +225,7 @@ an exception</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="setSql" id="_setSql">
+	<tr data-order="_setSql" id="__setSql">
 
 		<td class="attributes"><code>
 			 protected 
@@ -234,8 +235,8 @@ an exception</p>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_setSql">#</a>
-		<code><a href="source-class-Model.html#63-70" title="Go to source code">setSql</a>( <span>String <var>$sql</var></span> )</code>
+		<a class="anchor" href="#__setSql">#</a>
+		<code><a href="source-class-Model.html#87-94" title="Go to source code">_setSql</a>( <span>String <var>$sql</var></span> )</code>
 
 		<div class="description short">
 			
@@ -264,7 +265,7 @@ executed</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getAll" id="_getAll">
+	<tr data-order="_getAll" id="__getAll">
 
 		<td class="attributes"><code>
 			 protected 
@@ -274,8 +275,8 @@ executed</p>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getAll">#</a>
-		<code><a href="source-class-Model.html#72-93" title="Go to source code">getAll</a>( )</code>
+		<a class="anchor" href="#__getAll">#</a>
+		<code><a href="source-class-Model.html#96-117" title="Go to source code">_getAll</a>( )</code>
 
 		<div class="description short">
 			
@@ -314,7 +315,7 @@ $data = $this-&gt;getAll();<br />
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="insertAll" id="_insertAll">
+	<tr data-order="_insertAll" id="__insertAll">
 
 		<td class="attributes"><code>
 			 protected 
@@ -324,8 +325,8 @@ $data = $this-&gt;getAll();<br />
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_insertAll">#</a>
-		<code><a href="source-class-Model.html#95-126" title="Go to source code">insertAll</a>( <span>Array <var>$userData</var></span> )</code>
+		<a class="anchor" href="#__insertAll">#</a>
+		<code><a href="source-class-Model.html#119-150" title="Go to source code">_insertAll</a>( <span>Array <var>$userData</var></span> )</code>
 
 		<div class="description short">
 			
@@ -391,18 +392,72 @@ $result = $this-&gt;insertAll($userData);<br />
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="dbHandle" id="$dbHandle">
+	<tr data-order="_view" id="$_view">
+		<td class="attributes"><code>
+			protected  
+			object
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Model.html#17-21" title="Go to source code"><var>$_view</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$_view" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Instance of view object</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Instance of view object</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="_controller" id="$_controller">
+		<td class="attributes"><code>
+			protected  
+			object
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Model.html#22-26" title="Go to source code"><var>$_controller</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$_controller" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Instance of controller object</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Instance of controller object</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="_dbHandle" id="$_dbHandle">
 		<td class="attributes"><code>
 			protected  
 			Object
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Model.html#17-21" title="Go to source code"><var>$dbHandle</var></a>
+				<a href="source-class-Model.html#27-31" title="Go to source code"><var>$_dbHandle</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$dbHandle" class="anchor">#</a>
+			<a href="#$_dbHandle" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -418,18 +473,18 @@ $result = $this-&gt;insertAll($userData);<br />
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="sql" id="$sql">
+	<tr data-order="_sql" id="$_sql">
 		<td class="attributes"><code>
 			protected  
 			String
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Model.html#22-26" title="Go to source code"><var>$sql</var></a>
+				<a href="source-class-Model.html#32-36" title="Go to source code"><var>$_sql</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$sql" class="anchor">#</a>
+			<a href="#$_sql" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -452,7 +507,7 @@ $result = $this-&gt;insertAll($userData);<br />
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Model.html#27-31" title="Go to source code"><var>$errorInfo</var></a>
+				<a href="source-class-Model.html#37-41" title="Go to source code"><var>$errorInfo</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
