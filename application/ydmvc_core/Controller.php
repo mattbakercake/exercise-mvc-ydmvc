@@ -31,7 +31,7 @@ abstract class Controller {
      * Array containing parameters passed to controller
      * @var Array 
      */
-    protected $_urlValues;
+    protected $_params;
     /**
      * String constaining the name of current model/view
      * class
@@ -54,13 +54,13 @@ abstract class Controller {
      * Constructor instantiates model and view objects and
      * calls the controller method to be run
      * @param string $action
-     * @param array $urlValues
+     * @param array $params
      */
-    function __construct($action,$urlValues) {
+    function __construct($action,$params) {
         $this->_setControllerName();
         $this->_setModelViewName();
         $this->_setActionName($action);
-        $this->_setUrlValues($urlValues);
+        $this->_setParamValues($params);
         $this->_loadView();
         $this->_loadModel();
         //if the model object is successfully set call controller action
@@ -121,8 +121,8 @@ abstract class Controller {
      * sets array of parameters from url
      * @param array $urlValues
      */
-    private function _setUrlValues($urlValues) {
-        $this->_urlValues = $urlValues;
+    private function _setParamValues($params) {
+        $this->_params = $params;
     }
     
     /*

@@ -27,7 +27,7 @@ class Request {
      * An array of parameters extracted from url
      * @var array 
      */
-    public $values = array();
+    public $params = array();
      /**
      * Url that has been called
      * @var string 
@@ -62,7 +62,7 @@ class Request {
         }
         
          if (!empty($parameters)) {
-           $this->values = $parameters; 
+           $this->params = $parameters; 
         }
     }
     
