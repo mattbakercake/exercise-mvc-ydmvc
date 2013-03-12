@@ -1,7 +1,7 @@
 <?php
 //This is the default model
 
-class Index extends Model{
+class Index_Model extends Model{
     
     public function getAllUserDetails() {
         $sql = "Select

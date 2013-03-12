@@ -77,29 +77,58 @@ class FrontController {
         }
     }
     
+    
     /**
      * Runs the front controller for request.  Creates a new instance of 
      * the controller and action that has been set
      * by the url request
      */
+    private function _instantiateContoller() {
+        //check controller is set
+        if (!isset($this->_controller)) { 
+            throw new Exception('Controller not specified in front controller');
+        }
+        //check action is set
+        if (!isset($this->_action)) { 
+            throw new Exception('Controller action not specified in front controller');
+        }
+        //set controller class/file name
+        $className = ucwords($this->_controller) . '_Controller';
+        //check controller class file/class exists/is readable
+        if (!class_exists($className)) {
+            //if display errors are off (production environment) throw 404 page else throw exception
+            if (ini_get('display_errors') === '0') {
+                $e = new Error();
+                $e->_throw404();
+            } else {
+                throw new Exception('Controller class not defined: '.$className. ' ');
+            }
+        }
+        //check controller action is defined
+        if (!method_exists($className, $this->_action)) {
+            //if display errors are off (production environment) throw 404 page else throw exception
+            if (ini_get('display_errors') === '0') {
+                $e = new Error();
+                $e->_throw404();
+            } else {
+                throw new Exception('Controller action not defined: Controller: '.$className. ' -> Action: ' .$this->_action);
+            }
+        }
+        //if all above don't throw exception instantiate controller
+        new $className($this->_action,$this->_params);  
+        
+    }
+    
+    /**
+     * tries calling _instantiateContoller() function to fire current request 
+     * or throws an error
+     */
     public function run() {
-      if (isset($this->_controller)) { //check controller is set
-          if (isset($this->_action)) { //check action is set
-                $className = ucwords($this->_controller) . '_Controller';
-                if (class_exists($className)) { //check class file exists
-                    new $className($this->_action,$this->_params); //instantiate 
-                } else {
-                    //no controller class defined
-                    throw new Exception(' Controller class not defined: '.$className. ' ');
-                }
-          } else {
-              //no action defined
-             throw new Exception(' Controller action not set ');
-          }
-      } else {
-          //no controller set
-          throw new Exception(' Controller not set ');
-      }
+        try {
+          $this->_instantiateContoller();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
     }
     
 }

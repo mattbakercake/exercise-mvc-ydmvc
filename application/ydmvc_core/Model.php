@@ -12,7 +12,7 @@
  * @since 26-02-2013
  * @author Matt Baker <dev@mikesierra.net>
  */
-class Model {
+abstract class Model {
 
     /**
      * Instance of database handle object

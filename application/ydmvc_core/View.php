@@ -11,7 +11,7 @@
  * @since 26-02-2013
  * @author Matt Baker <dev@mikesierra.net>
  */
-class View {
+ class View {
     
     /**
      * String containing name of the view for the controller

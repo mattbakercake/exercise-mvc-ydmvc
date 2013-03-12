@@ -8,6 +8,7 @@ class Index_Controller extends Controller {
         $this->_view->title = "Welcome to the Framework";
         $this->_view->setData('remoteAddress', $_SERVER['REMOTE_ADDR']);
         $this->_view->load();
+        echo "index";
     }
     
     public function dbfetch() {

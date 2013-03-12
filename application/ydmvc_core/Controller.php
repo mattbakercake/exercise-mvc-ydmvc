@@ -14,7 +14,7 @@
  * @since 26-02-2013
  * @author Matt Baker <dev@mikesierra.net>
  */
-class Controller {
+abstract class Controller {
     
     /**
      * Instance of model object for current request
@@ -56,14 +56,20 @@ class Controller {
         $this->_setUrlValues($urlValues);
         $this->_loadModel();
         $this->_loadView();
-        $this->_runControllerMethod($method);
+        if (is_object($this->_model)) {
+            $this->_runControllerMethod($method);
+        }
     }
     
     /**
      * Instantiates current model object
      */
     protected function _loadModel() {
-        $this->_model = new $this->_modelViewName;
+        try {
+              $this->_instantiateModel(); 
+        } catch (Exception $e) {
+                echo $e->getMessage();
+        }
     }
     
     /**
@@ -103,7 +109,20 @@ class Controller {
     private function _setUrlValues($urlValues) {
         $this->_urlValues = $urlValues;
     }
-
+    
+    /*
+     * checks model class exists and instantiates it or throws an error
+     */
+    private function _instantiateModel() {
+        $modelName = $this->_modelViewName . "_Model";
+        if (!class_exists($modelName)) {
+            throw new Exception ($modelName.' class is not defined');
+        }
+        
+        $this->_model = new $modelName;
+            
+    }
+ 
 }
 
 ?>
