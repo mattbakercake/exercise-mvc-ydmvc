@@ -61,7 +61,7 @@ abstract class Model {
         }
     }
     
-   /**
+    /**
     * Protected function that sets a database handle object for the
     * model or throws an exception 
     * @global String $dsn

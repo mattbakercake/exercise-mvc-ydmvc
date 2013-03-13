@@ -31,7 +31,7 @@ abstract class Controller {
      * Array containing parameters passed to controller
      * @var Array 
      */
-    protected $_params;
+    public $_params;
     /**
      * String constaining the name of current model/view
      * class

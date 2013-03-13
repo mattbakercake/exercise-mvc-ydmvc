@@ -5,22 +5,12 @@
 class Index_Controller extends Controller {
     
     public function index() {
-        $this->_view->title = "Welcome to the Framework";
-        $this->_view->setData('remoteAddress', $_SERVER['REMOTE_ADDR']);
-        $this->_view->load();
-        echo "index";
+        //model sets page title for view (could be from DB) and data to pass
+        $this->_view->load();//dispatch index.html for this action
     }
     
     public function dbfetch() {
-        if(!empty($this->_urlValues[0]) && is_numeric($this->_urlValues[0])) {
-            $userData = $this->_model->getUidUserDetails($this->_urlValues[0]);
-        } else {
-            $userData = $this->_model->getAllUserDetails();
-        }
-        $fruits = $this->_model->getAllFruit();
-        $this->_view->title = "Show/Add Users";
-        $this->_view->setData('userData', $userData);
-        $this->_view->setData('fruits', $fruits);
+        //dispatch view 'listusers.html' that model has injected data to
         $this->_view->load('listusers.html');
     }
     
