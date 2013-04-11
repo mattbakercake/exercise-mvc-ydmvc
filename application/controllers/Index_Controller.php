@@ -5,12 +5,22 @@
 class Index_Controller extends Controller {
     
     public function index() {
+        //call model method
+        $this->_model->index();
         //model sets page title for view (could be from DB) and data to pass
         $this->_view->load();//dispatch index.html for this action
     }
     
-    public function dbfetch() {
+    public function dbfetch($param = NULL) {
+         //set HTML title for view
+        $this->_view->title = "Show/Add Users";
+        
+        //get parameter passed from controller
+        if (isset($this->_params[0])) {
+            $param = $this->_params[0];
+        }
         //dispatch view 'listusers.html' that model has injected data to
+        $this->_model->dbfetch($param);
         $this->_view->load('listusers.html');
     }
     

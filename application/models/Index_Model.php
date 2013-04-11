@@ -1,3 +1,4 @@
+
 <?php
 
 /**
@@ -5,25 +6,16 @@
  */
 class Index_Model extends Model{
     
-    /**
-     * __contructor type function. The index function is the default 
-     * method/action for the index controller and
-     * action.  If defined, it will be executed when the index controller and action
-     * are dispatched  
-     */
+  
     public function index() {
-        //set HTML title for view
+         //set HTML title for view
          $this->_view->title = "Welcome to the Framework";
          //add variable $remoteAddress to view containing caller's ip address
          $this->_view->setData('remoteAddress', $_SERVER['REMOTE_ADDR']);
     }
     
-    public function dbfetch() {
-        //set HTML title for view
-        $this->_view->title = "Show/Add Users";
-        //get parameter passed from controller
-        $param = $this->_controller->_params[0];
-        //check for paramter passed from url->controller->model and perform appropriate action
+    public function dbfetch($param = NULL) {   
+        //check for paramter passed from url->controller and perform appropriate action
         if(!empty($param) && is_numeric($param) ) {
             $userData = $this->getUidUserDetails($param);
         } else {

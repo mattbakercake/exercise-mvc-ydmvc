@@ -67,6 +67,7 @@ abstract class Controller {
         if (is_object($this->_model)) {
             $this->_runControllerAction($this->actionName);
         }
+        
     }
     
     /**
@@ -134,7 +135,7 @@ abstract class Controller {
             throw new Exception ($modelName.' class is not defined');
         }
         
-        $this->_model = new $modelName($this->_view,$this);
+        $this->_model = new $modelName($this->_view,&$this);
             
     }
  

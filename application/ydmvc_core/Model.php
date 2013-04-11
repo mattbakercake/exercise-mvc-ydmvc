@@ -52,13 +52,6 @@ abstract class Model {
         if (is_object($controller)) {
             $this->_setController($controller);
         }
-        //run model action to match controller action if exists e.g. index() function in model
-        if (is_object($this->_view) && is_object($this->_controller)) {
-            $actionName = $this->_controller->actionName;
-            if (method_exists(get_called_class(),$actionName)) {
-                $this->$actionName();
-            }
-        }
     }
     
     /**
