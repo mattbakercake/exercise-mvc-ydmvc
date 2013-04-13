@@ -15,11 +15,11 @@ class Index_Controller extends Controller {
          //set HTML title for view
         $this->_view->title = "Show/Add Users";
         
-        //get parameter passed from controller
+        //get parameter passed from URL
         if (isset($this->_params[0])) {
             $param = $this->_params[0];
         }
-        //dispatch view 'listusers.html' that model has injected data to
+        //Call model with any parameters and dispatch view 'listusers.html'
         $this->_model->dbfetch($param);
         $this->_view->load('listusers.html');
     }

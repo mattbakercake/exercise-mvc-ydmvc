@@ -1,3 +1,180 @@
 body {
-    font-size: 1.2em;
+    background-color: #F1F1D4;
+    font-family: 'Droid Sans', sans-serif;
+    color: #4C4C4C;
+}
+
+h1 {
+    color: #5bb2fc;
+}
+
+#content {
+    width: 960px;
+    margin: 30px auto;
+}
+
+#header {
+   width: 100%;
+   font-family: 'Cabin Sketch', cursive;
+   font-size: 4em;
+   color: #4C4C4C;
+   line-height: 2em;
+   text-align: center;
+   background-color: #FFFFFF;
+   margin-bottom: 7px;
+   border-radius: 10px;
+   box-shadow: 3px 3px 5px #888;
+}
+
+#nav {
+    width: 100%;
+    background-color: #4C4C4C;
+    font-size: 1.5em;
+    color: #FFFFFF;
+    margin-bottom: 7px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #888;
+}
+
+#nav nav ul {
+    margin:0px;
+    list-style: none; 
+    overflow: hidden; 
+    position: relative;
+}
+#nav nav ul li { 
+    float: left; 
+    margin: 0 20px 0 0;
+}
+
+#nav nav ul li a {
+    display: block; 
+    width: 60px; 
+    height: 60px;
+    margin-top:3px;
+    margin-bottom:3px;
+    background-image: url(../img/navicons.png); 
+    background-repeat: no-repeat;
+}
+    #nav nav ul li:nth-child(1) a {
+        background-color: #5bb2fc;
+        background-position: 0px 0px;
+    }
+    #nav nav ul li:nth-child(2) a {
+        background-color: #58ebd3;
+        background-position: -60px 0px;
+    }
+    #nav nav ul li:nth-child(3) a {
+        background-color: #ffa659;
+        background-position: 0px -60px;
+    }
+   
+#nav nav ul li a span {
+    text-transform: uppercase; 
+    position: absolute; 
+    left: 280px; 
+    top: 16px;
+    display: none;
+}
+
+#nav nav ul li a:hover span {
+	display: block;
+}
+
+#nav nav ul li:nth-child(1) a span {
+color: #5bb2fc;
+}
+#nav nav ul li:nth-child(2) a span {
+color: #58ebd3;
+}
+#nav nav ul li:nth-child(3) a span {
+color: #ffa659;
+}
+
+#maincontent {
+    width: 99%;
+    min-height: 800px;
+    padding: 10px 0px 10px 10px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #888;
+}
+
+#databox {
+    width: 60%;
+    margin: 20px auto;
+    font-size: 1.4em;
+    line-height: 1.4em;
+    text-align: center;
+    background-color: #F1F1D4;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #888;
+}
+
+.blue {
+    color: #5bb2fc;
+}
+
+.orange {
+    color: #ffa659;
+}
+
+.green {
+    color: #58ebd3;
+}
+
+#userTable {
+    width: 60%;
+    margin: 0px auto;
+}
+
+#userTable table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#userTable table,th,td {
+    border: 1px solid #4C4C4C;
+}
+
+#userTable th {
+    background-color: #ffa659;
+}
+
+#userTable td {
+    text-align: left;
+}
+
+#userTable tr:nth-child(odd) td {
+    background-color: #F1F1D4;
+}
+
+#userform {
+    width: 60%;
+    margin: 10px auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #FFFFFF;
+    background-color: #5bb2fc;
+    border-radius: 10px;
+}
+
+#userform h3{
+    margin:0px 0px 5px 5px;
+}
+
+#userform label {
+    display: block;
+    float: left;
+    width: 7em;
+    text-align: left;
+    margin-left: 5px;
+}
+
+#userform input {
+    width: 15em;
+}
+
+#userform .button {
+    width: 9.7em;
 }

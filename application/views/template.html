@@ -6,9 +6,39 @@
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="<?php echo SITE_ROOT?>/public/js/script.js"></script>
         <link rel="stylesheet" type="text/css" href="<?php echo SITE_ROOT?>/public/css/style.css" />
+        <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <!-- inject content -->
-        <?php include("$file"); ?>
+        <div id="content">
+            <div id="header">
+                A Kind of Framework Demo!
+            </div>
+            <div id="nav">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="<?php echo SITE_ROOT; ?>">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_ROOT . '/index/dbfetch'; ?>">
+                                <span>List Users</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_ROOT . '/index/dbfetch/2'; ?>">
+                                <span>List Single User</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="maincontent">
+                <!-- inject content -->
+                <?php include("$file"); ?>
+            </div>
+        </div>
     </body>
 </html>

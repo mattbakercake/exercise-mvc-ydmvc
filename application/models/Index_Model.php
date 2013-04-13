@@ -17,8 +17,10 @@ class Index_Model extends Model{
     public function dbfetch($param = NULL) {   
         //check for paramter passed from url->controller and perform appropriate action
         if(!empty($param) && is_numeric($param) ) {
+            $this->_view->setData('heading', 'List Single User');
             $userData = $this->getUidUserDetails($param);
         } else {
+            $this->_view->setData('heading', 'List All Users');
             $userData = $this->getAllUserDetails();
         }
         //get array of fruits from database

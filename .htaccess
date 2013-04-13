@@ -2,5 +2,5 @@ Options +FollowSymLinks
 
 RewriteEngine On
 
-RewriteCond $1 !^(index\.php|robots\.txt|public/css/*|public/js/*)
+RewriteCond $1 !^(index\.php|robots\.txt|public/css/*|public/js/*|public/img/*)
 RewriteRule ^(.+)$ index.php?url=$1 [QSA]
