@@ -135,7 +135,7 @@ abstract class Controller {
             throw new Exception ($modelName.' class is not defined');
         }
         
-        $this->_model = new $modelName($this->_view,&$this);
+        $this->_model = new $modelName($this->_view,$this);
             
     }
  
