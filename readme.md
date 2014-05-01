@@ -49,3 +49,6 @@ Application settings are defined in application/ydmvc_core/settings.inc.php
 
 ####Layout Options
 +   USE_TEMPLATE - if set to TRUE then includes application/views/template.html in output, which can be used to wrap all content with a common structure such as header/footer/nav etc
+
+Creating content
+----------------
