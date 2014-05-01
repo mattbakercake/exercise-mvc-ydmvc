@@ -22,3 +22,30 @@ Installation
     -   DB_USERNAME, DB_PASSWORD, DB_NAME, DB_HOST - set the database connection details
 
 With those items set correctly, you should see a very basic introduction page with some styling.
+
+Settings
+--------
+
+Application settings are defined in application/ydmvc_core/settings.inc.php
+
+####Displaying Errors
++   display_errors - set to 0 to hide php errors (except fatal errors) or 1 to show.  If errors show, exception errors will be displayed indicating problems such as missing controllers, otherwise a 404 not found error shows.
++   error_reporting - Set the level of errors to be displayed if display_errors is on e.g. E_ERROR, -1 (all) etc
+
+####Paths
++   DOCUMENT_ROOT - absolute path to document root for application
++   SITE_ROOT - Base url to application
+
+####Default Behaviour
++   DEFAULT_CONTROLLER - Controller to invoke if none is specified in the url e.g. the application root
++   DEFAULT_ACTION - Action to invoke if none is specified in the url e.g. the application root
+
+####Database
++   DB_USERNAME - database username
++   DB_PASSWORD - database password
++   DB_NAME - database name
++   DB_HOST - database host
++   $dsn - Data Source Name (DSN) string for database connection
+
+####Layout Options
++   USE_TEMPLATE - if set to TRUE then includes application/views/template.html in output, which can be used to wrap all content with a common structure such as header/footer/nav etc
