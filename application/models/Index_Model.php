@@ -11,7 +11,7 @@ class Index_Model extends Model{
          //set HTML title for view
          $this->_view->title = "Welcome to the Framework";
          //add variable $remoteAddress to view containing caller's ip address
-         $this->_view->setData('remoteAddress', $_SERVER['REMOTE_ADDR']);
+         $this->_view->setData('remotePort', $_SERVER['REMOTE_PORT']);
     }
     
     public function dbfetch($param = NULL) {   

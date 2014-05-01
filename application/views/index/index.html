@@ -7,7 +7,7 @@
 <p>
     The default controller and action can be run by either visiting the root of the site 
     (<span class="green"><?php echo SITE_ROOT; ?></span>)or by specifying the controller and action in the 
-    URL (<span class="green"><?php echo SITE_ROOT . '/index/index';?>)</span>.
+    URL (<span class="green"><?php echo SITE_ROOT . '/index/index';?></span>).
 </p>
 <p>Use the navigation buttons above to trigger the different controller actions.</p>
 
@@ -16,4 +16,4 @@ The controller action for this page calls the model into action and dispatches t
 injects a variable into the view containing some data that can accessed in the view file:
 </p>
 
-<div id="databox"> Data injected to view from model: <span class="orange">IP=<?php echo $remoteAddress; ?></span></div>
+<div id="databox"> Data injected to view from model: <span class="orange">Local Port = <?php echo $remotePort; ?></span></div>
