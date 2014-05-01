@@ -9,7 +9,7 @@ ini_set('error_reporting', E_ERROR);
 @include('local.settings.php');
 
 //Server document path to the application
-define('SERVER_ROOT', '/var/html/');
+define('DOCUMENT_ROOT', '/var/html/');
 
 //Set the base application url
 define('SITE_ROOT', 'http://localhost');

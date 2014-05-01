@@ -64,8 +64,8 @@
         } else {
             $this->_file = $file; 
         }
-        $template = SERVER_ROOT . '/application/views/template.html';//view template location
-        $file = SERVER_ROOT . '/application/views/' . strtolower($this->_viewFolder) . '/' . $this->_file;//view file location
+        $template = DOCUMENT_ROOT . '/application/views/template.html';//view template location
+        $file = DOCUMENT_ROOT . '/application/views/' . strtolower($this->_viewFolder) . '/' . $this->_file;//view file location
         if (file_exists($template) && USE_TEMPLATE) { //if template exists and settings say use
             if (file_exists($file)) {
                 extract($this->_viewData);//inject variables into view
@@ -119,7 +119,7 @@
      * 
      */
     public function partial($filename,$partialData) {
-        $file = SERVER_ROOT . '/application/views/partials/' . $filename;
+        $file = DOCUMENT_ROOT . '/application/views/partials/' . $filename;
         if (file_exists($file)) {
             ob_start(); //start output buffering
             include($file); //open the partial file

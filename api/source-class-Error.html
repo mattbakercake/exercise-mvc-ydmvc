@@ -102,7 +102,7 @@
 </span></span><span id="16" class="l"><a class="l" href="#16">16: </a><span class="php-comment">     * generic text is shown
 </span></span><span id="17" class="l"><a class="l" href="#17">17: </a><span class="php-comment">     */</span>
 </span><span id="18" class="l"><a class="l" href="#18">18: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="__throw404" href="#__throw404">_throw404</a>() {
-</span><span id="19" class="l"><a class="l" href="#19">19: </a>        <span class="php-var">$_404file</span> = SERVER_ROOT . <span class="php-quote">'/application/views/404.html'</span>;<span class="php-comment">//location of 404 template</span>
+</span><span id="19" class="l"><a class="l" href="#19">19: </a>        <span class="php-var">$_404file</span> = DOCUMENT_ROOT . <span class="php-quote">'/application/views/404.html'</span>;<span class="php-comment">//location of 404 template</span>
 </span><span id="20" class="l"><a class="l" href="#20">20: </a>        <span class="php-comment">//send header</span>
 </span><span id="21" class="l"><a class="l" href="#21">21: </a>        <span class="php-keyword2">header</span>(<span class="php-quote">&quot;HTTP/1.0 404 Not Found&quot;</span>);
 </span><span id="22" class="l"><a class="l" href="#22">22: </a>        <span class="php-comment">//display 404 template file if exists else basic message</span>

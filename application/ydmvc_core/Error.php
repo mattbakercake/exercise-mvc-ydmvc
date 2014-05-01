@@ -16,7 +16,7 @@ class Error {
      * generic text is shown
      */
     public function _throw404() {
-        $_404file = SERVER_ROOT . '/application/views/404.html';//location of 404 template
+        $_404file = DOCUMENT_ROOT . '/application/views/404.html';//location of 404 template
         //send header
         header("HTTP/1.0 404 Not Found");
         //display 404 template file if exists else basic message
