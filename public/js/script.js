@@ -23,7 +23,6 @@ function submitUserForm() {
         url: '../index/adduser/',
         data:$('#adduserform').serialize(), 
         success: function(response) {
-            popupMsg(response);
             $('#userTable').load('../index/updateUserTable');
             $( '#adduserform' ).each(function(){
                 this.reset();
@@ -36,13 +35,6 @@ function submitUserForm() {
 
     return false;
 };
-
-/*
- * displays pop up message
- */
-function popupMsg(msg) {
-        alert(msg);
-    }
 
 
 
