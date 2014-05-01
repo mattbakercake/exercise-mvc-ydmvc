@@ -16,13 +16,18 @@ class Error {
      * generic text is shown
      */
     public function _throw404() {
-        $_404file = DOCUMENT_ROOT . '/application/views/404.html';//location of 404 template
+        $file = DOCUMENT_ROOT . '/application/views/404.html';//location of 404 template
+        $template = DOCUMENT_ROOT . '/application/views/template.html';//view template location
         //send header
         header("HTTP/1.0 404 Not Found");
         //display 404 template file if exists else basic message
-        if (file_exists($_404file)) {
+        if (file_exists($file)) {
             ob_start();
-            include $_404file;
+            if (file_exists($template)) {
+                include $template; //if template file exists use this and inject error into it
+            } else {
+                include $file; //otherwise spit out error contents
+            }
             $output = ob_get_contents();
             ob_end_clean();
             echo $output;
