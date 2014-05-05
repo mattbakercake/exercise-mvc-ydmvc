@@ -132,7 +132,12 @@ abstract class Controller {
     private function _instantiateModel() {
         $modelName = $this->_modelViewName . "_Model";
         if (!class_exists($modelName)) {
-            throw new Exception ($modelName.' class is not defined');
+            if (ini_get('display_errors') === '0') {
+                $e = new Error();
+                $e->_throw404();
+            } else {
+                throw new Exception ($modelName.' class is not defined');
+            }
         }
         
         $this->_model = new $modelName($this->_view,$this);
