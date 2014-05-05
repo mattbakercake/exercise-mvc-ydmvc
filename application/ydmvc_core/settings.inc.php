@@ -12,7 +12,7 @@ ini_set('error_reporting', E_ERROR);
 define('DOCUMENT_ROOT', '/var/html/');
 
 //Set the base application url
-define('SITE_ROOT', 'http://localhost');
+define('BASE_URL', 'http://localhost');
 
 //define default controller and method (e.g. landing page)
 define('DEFAULT_CONTROLLER', 'index');
