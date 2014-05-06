@@ -55,11 +55,34 @@ Using the Framework
 
 Adding Content
 --------------
-1) Create a controller class file to match the desired URL in upper case with a trailing _Controller e.g. if the URL is to be http://localhost/widget, then the class file in /applications/controllers should be Widget_Controller.php.
+1) Create a controller class file in /application/controllers to match the desired URL in upper case with a trailing _Controller suffix e.g. if the URL is to be http://localhost/widget, then the class file in /applications/controllers should be Widget_Controller.php.
 The controller class inside the file should have the same name as the file and extend the core controller class e.g. :
 
-        class Widget_controller extends Controller {
+        class Widget_Controller extends Controller {
             //controller class code here
         }
 
-2)
+2) Create an action function inside the controller class.  If you want the action to fire when the URL only calls the controller and not any action implicitly (e.g. http://localhost/widget), then the default action must me named index().
+Otherwise, to trigger an implicit action from the URL (e.g. http://localhost/widget/show) the appropriate action function should be created inside the controller class:
+
+        class Widget_Controller extends Controller {
+            
+            function index() {
+                //code for http://localhost/widget or http://localhost/index goes here
+            }
+
+            function show() {
+                //code for http://localhost/widget/show goes here
+            }
+
+        }
+
+3)  Create a model class file in /application/models to match the controller name with a trailing _Model suffix e.g. for the widget controller the corresponding model class file would be Widget_Model.php
+The model class inside the file should have the same name as the file and extend the core model class e.g. :
+
+        class Widget_Model extends Model {
+            //model class functions here
+        }
+
+4) Create a directory for the controller views in /application/views e.g. /application/views/widget.  Create html files within this folder.
+The default view is index.html unless another view file is explicitly named.
