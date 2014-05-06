@@ -86,3 +86,70 @@ The model class inside the file should have the same name as the file and extend
 
 4) Create a directory for the controller views in /application/views e.g. /application/views/widget.  Create html files within this folder.
 The default view is index.html unless another view file is explicitly named.
+
+Notes
+-----
+
+####Loading a view
+From controller or model `$this->_view->load();` to call the default view (index.html) or `$this->_view->load(viewname.html);` to call a named view
+
+####Calling a model method
+From controller `$this->_model->methodname();`
+
+####Sending values to the view
+From controller or model `$this->_view->setData('variablename', $data);` where 'variablename' is a string that represents the variable name that will be available in the view, and $data is the data that the variable will contain (e.g. string, array etc).
+
+####Set the title for a view
+From controller or model `$this->_view->title = "Title String;"` sets the HTML title tag
+
+####Partials
+Partials are html markup files that are useful for segregating reusable view components, or messy looping structures such as dynamic tables, from the main view file.
+Create html files for partials in /application/views/partials and call them as appropriate from the view file, model or controller by echoing e.g. `echo $this->partial('partialname.html', $data);`,
+where 'partialname.html is the partial file and $data is any data that the partial needs (e.g. a value or an array of values).
+
+####Using values from the URL
+Params from the url (e.g. http://localhost/widget/show/123/456) are stored in an array, which can be accessed within the controller using `$this->_params`.
+(*Warning: These values will need to be sanitised within the controller or model prior to output to prevent malicious code execution).
+
+Interacting with the Database
+-----------------------------
+The model class in /application/ydmvc_core contains a few core sql methods, which are very basic at the moment and may need to be augmented.
+The insert method uses prepared statements and therefore placeholders for inserting actual data.
+
+To interact with the db in your model:
+
+1)  create an sql statement and set it:
+
+        $sql =  "Select
+                  u.id,
+                  u.firstname,
+                  u.surname,
+                  f.name
+                From
+                  User u
+                INNER JOIN
+                  Fruit AS f on u.fruit = f.id
+                ORDER BY u.id ASC";
+
+        $this->_setSql($sql);
+
+or:
+
+        $sql = "INSERT INTO User 
+                (firstname,
+                surname,fruit) 
+                VALUES 
+                (:firstname,
+                :surname,:fruit)";
+
+       $this->_setSql($sql)
+
+*note placeholders in insert example
+
+2) Fetch the result:
+
+##Read from database 
+`$result = $this->_getAll;`
+
+##Insert into the database 
+`$result = $this->_insertAll($data)`, where $data is an associative array with the key in each data-pair corresponding to the placeholder name e.g. array('firstname'='Joe', 'surname'='blogs', 'fruit' = 'banana')
