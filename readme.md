@@ -50,5 +50,15 @@ Application settings are defined in application/ydmvc_core/settings.inc.php
 ####Layout Options
 +   USE_TEMPLATE - if set to TRUE then includes application/views/template.html in output, which can be used to wrap all content with a common structure such as header/footer/nav etc
 
-Creating content
-----------------
+Using the Framework
+===================
+
+Adding Content
+--------------
+1) Create a controller class file to match the desired URL in upper case with a trailing _Controller e.g. if the URL is to be http://localhost/widget, then the class file in /applications/controllers should be Widget_Controller.php.
+The controller class inside the file should have the same name as the file and extend the core controller class e.g. :
+    class Widget_controller extends Controller {
+        //controller class code here
+    }
+
+2)
