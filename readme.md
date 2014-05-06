@@ -120,6 +120,8 @@ To interact with the db in your model:
 
 1)  create an sql statement and set it:
 
+######Read from database
+
         $sql =  "Select
                   u.id,
                   u.firstname,
@@ -133,7 +135,7 @@ To interact with the db in your model:
 
         $this->_setSql($sql);
 
-or:
+######Create into database
 
         $sql = "INSERT INTO User 
                 (firstname,
@@ -151,5 +153,5 @@ or:
 ######Read from database 
 `$result = $this->_getAll();`
 
-######Insert into the database 
+######Create into the database 
 `$result = $this->_insertAll($data)`, where $data is an associative array with the key in each data-pair corresponding to the placeholder name e.g. array('firstname'='Joe', 'surname'='blogs', 'fruit' = 'banana')
