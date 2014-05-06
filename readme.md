@@ -148,7 +148,7 @@ To interact with the db in your model:
 
 *note placeholders in insert example
 
-2) Fetch the result:
+2) Perform query and fetch the result:
 
 ######Read from database 
 `$result = $this->_getAll();`
