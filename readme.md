@@ -57,8 +57,9 @@ Adding Content
 --------------
 1) Create a controller class file to match the desired URL in upper case with a trailing _Controller e.g. if the URL is to be http://localhost/widget, then the class file in /applications/controllers should be Widget_Controller.php.
 The controller class inside the file should have the same name as the file and extend the core controller class e.g. :
-    class Widget_controller extends Controller {
-        //controller class code here
-    }
+
+        class Widget_controller extends Controller {
+            //controller class code here
+        }
 
 2)
