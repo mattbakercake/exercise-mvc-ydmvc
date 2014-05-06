@@ -148,8 +148,8 @@ or:
 
 2) Fetch the result:
 
-##Read from database 
-`$result = $this->_getAll;`
+######Read from database 
+`$result = $this->_getAll();`
 
-##Insert into the database 
+######Insert into the database 
 `$result = $this->_insertAll($data)`, where $data is an associative array with the key in each data-pair corresponding to the placeholder name e.g. array('firstname'='Joe', 'surname'='blogs', 'fruit' = 'banana')
