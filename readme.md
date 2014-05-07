@@ -68,7 +68,7 @@ Otherwise, to trigger an implicit action from the URL (e.g. http://localhost/wid
         class Widget_Controller extends Controller {
             
             function index() {
-                //code for http://localhost/widget or http://localhost/index goes here
+                //code for http://localhost/widget or http://localhost/widget/index goes here
             }
 
             function show() {
@@ -77,10 +77,10 @@ Otherwise, to trigger an implicit action from the URL (e.g. http://localhost/wid
 
         }
 
-3)  Create a model class file in /application/models to match the controller name with a trailing _Model suffix e.g. for the widget controller the corresponding model class file would be Widget_Model.php
+3)  Create a model class file in /application/models to match the controller name without a suffix e.g. for the widget controller the corresponding model class file would be Widget.php
 The model class inside the file should have the same name as the file and extend the core model class e.g. :
 
-        class Widget_Model extends Model {
+        class Widget extends Model {
             //model class functions here
         }
 

@@ -130,7 +130,7 @@ abstract class Controller {
      * checks model class exists and instantiates it or throws an error
      */
     private function _instantiateModel() {
-        $modelName = $this->_modelViewName . "_Model";
+        $modelName = $this->_modelViewName;
         if (!class_exists($modelName)) {
             if (ini_get('display_errors') === '0') {
                 $e = new Error();

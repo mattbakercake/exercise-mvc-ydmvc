@@ -4,14 +4,14 @@
 /**
  * Index_Model extents the abstract Model class. It contains model methods/actions
  */
-class Index_Model extends Model{
+class Home extends Model{
     
   
     public function index() {
          //set HTML title for view
          $this->_view->title = "Welcome to the Framework";
          //add variable $remoteAddress to view containing caller's ip address
-         $this->_view->setData('remotePort', $_SERVER['REMOTE_PORT']);
+         $this->_view->setData('remotePort', filter_var($_SERVER['REMOTE_PORT'], FILTER_VALIDATE_INT));
     }
     
     public function dbfetch($param = NULL) {   

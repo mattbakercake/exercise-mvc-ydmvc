@@ -2,7 +2,7 @@
 
 //This is the default controller
 
-class Index_Controller extends Controller {
+class Home_Controller extends Controller {
     
     public function index() {
         //call model method

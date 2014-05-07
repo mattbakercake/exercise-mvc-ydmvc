@@ -15,7 +15,7 @@ define('DOCUMENT_ROOT', '/var/html/');
 define('BASE_URL', 'http://localhost');
 
 //define default controller and method (e.g. landing page)
-define('DEFAULT_CONTROLLER', 'index');
+define('DEFAULT_CONTROLLER', 'home');
 define('DEFAULT_ACTION', 'index');
 
 //Database connection strings
