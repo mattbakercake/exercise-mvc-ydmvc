@@ -17,7 +17,7 @@ class Home_Controller extends Controller {
         
         //get parameter passed from URL
         if (isset($this->_params[0])) {
-            $param = $this->_params[0];
+            $param = (int)$this->_params[0];
         }
         //Call model with any parameters and dispatch view 'listusers.html'
         $this->_model->dbfetch($param);
@@ -26,12 +26,13 @@ class Home_Controller extends Controller {
     
     public function adduser() {
         $userData = $_POST;
-        $result = $this->_model->addUserDetails($userData);
+        $result = $this->_model->saveuser($userData);
         return $result;      
     }
     
-    public function updateUserTable() {
-        $userData = $this->_model->getAllUserDetails();
+    public function updateusertable() {
+        $users = new User();
+        $userData = $users->_repository->findAll();
         echo $this->_view->partial('dblist.html',$userData);
     }
 

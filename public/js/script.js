@@ -20,10 +20,11 @@ $(document).ready(function() { //run scripts after page has loaded
 function submitUserForm() {
     $.ajax({
         type:'POST',
-        url: '../index/adduser/',
+        url: '../home/adduser/',
         data:$('#adduserform').serialize(), 
         success: function(response) {
-            $('#userTable').load('../index/updateUserTable');
+            alert(response);
+            $('#userTable').load('../home/updateusertable');
             $( '#adduserform' ).each(function(){
                 this.reset();
             });

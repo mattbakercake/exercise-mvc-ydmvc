@@ -56,5 +56,19 @@ class Autoload {
           require_once $filename;
        }
   }
+  
+  /**
+   * Autoloads classes in the framework's repository directory. looks for
+   * a file with the same name as the class being called; the class
+   * and filename should match and be title case e.g. Example.php
+   *  
+   * @param string $className The name of the class being called
+   */
+  public static function repositoryLoader($className) {
+      $filename = 'application/repository/'.$className.'.php';
+       if (is_readable($filename)) {
+          require_once $filename;
+       }
+  }
 }
 ?>
