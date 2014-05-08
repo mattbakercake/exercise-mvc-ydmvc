@@ -47,10 +47,12 @@ class User extends Model {
    
     public function findById($id) {
         $result =  $this->_repository->findById($id);
-        $this->setId($result['id']);
-        $this->setFirstname($result['firstname']);
-        $this->setSurname($result['surname']);
-        $this->setFruit($result['fruit']);
+        if ($result){
+            $this->setId($result['id']);
+            $this->setFirstname($result['firstname']);
+            $this->setSurname($result['surname']);
+            $this->setFruit($result['fruit']);
+        }
     }
     
     public function findAll() {      

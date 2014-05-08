@@ -26,8 +26,9 @@ class User_Repository implements Repository_Interface{
     
     public function findById($id) {
         $this->db->initDB();
-        $sql = "SELECT * FROM user WHERE id=" . $id;
+        $sql = "SELECT * FROM user WHERE id=?";
         $query = $this->db->_dbHandle->prepare($sql);
+        $query->bindParam(1, $id, PDO::PARAM_INT);
         $query->execute();
         $result =  $query->fetch();
         $this->db->quitDB();
