@@ -1,9 +1,9 @@
 <div>
     <form id="adduserform" onSubmit="return submitUserForm();">
         <label for="firstname">Firstname: </label>
-        <input type="text" name="firstname" /><br/>
+        <input type="text" id="firstname" name="firstname" /><span id="fnerror" class="errormsg"></span><br/>
         <label for="surname">Surname:</label>
-        <input type="text" name="surname" /><br />
+        <input type="text" id="surname" name="surname" /><span id="snerror" class="errormsg"></span><br />
         <label for="fruit">Favourite Fruit</label>
         <select name="fruit">
             <?php

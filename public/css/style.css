@@ -149,6 +149,20 @@ color: #ffa659;
     background-color: #F1F1D4;
 }
 
+#msgWrap {
+    position: relative;
+    width: 60%;
+    height: 30px;
+    margin: 0 auto;
+}
+
+#statusMsg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+}
+
 #userform {
     width: 60%;
     margin: 10px auto;

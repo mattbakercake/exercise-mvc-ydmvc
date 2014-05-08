@@ -12,10 +12,6 @@ class Home extends Model{
          $this->_view->title = "Welcome to the Framework";
          //add variable $remoteAddress to view containing caller's ip address
          $this->_view->setData('remotePort', filter_var($_SERVER['REMOTE_PORT'], FILTER_VALIDATE_INT)); 
-         
-         $user = new User;
-         $user->findById(8);
-         echo $user->getFirstname() . " " . $user->getSurname();
     }
     
     public function dbfetch($param = NULL) {   
@@ -62,10 +58,17 @@ class Home extends Model{
        $user->setFruit($data['fruit']);
        
        if ($user->getFirstname() != '' && $user->getSurname() != '' && $user->getFruit() != '') {
-           $user->create();
+           $success = $user->create();
        } else {
-          echo "Complete All Fields";
+          $success = FALSE;
        }
+       
+       if ($success) {
+           echo '{"status" : "1", "msg" : "User Added Successfully"}';
+       } else {
+           echo '{"status" : "0", "msg" : "There was a problem adding user"}';
+       }
+ 
     }
 }
 ?>
