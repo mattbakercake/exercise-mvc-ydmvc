@@ -32,7 +32,14 @@ class Home_Controller extends Controller {
     
     public function updateusertable() {
         $users = new User();
-        $userData = $users->_repository->findAll();
+        $userData = $users->findAll();
+            
+            for ($i=0; $i < count($userData); $i++) {
+                $fruit = new Fruit();
+                $fruit->findById($userData[$i]['fruit']);
+                $userData[$i]['fruit'] = $fruit->getName();
+            }
+            
         echo $this->_view->partial('dblist.html',$userData);
     }
 

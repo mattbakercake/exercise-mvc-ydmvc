@@ -5,7 +5,6 @@
  * Functions to run after the page has finished loading
  */
 $(document).ready(function() { //run scripts after page has loaded
-
     
      
 });
@@ -17,16 +16,16 @@ $(document).ready(function() { //run scripts after page has loaded
 /*
  * Submits the adduserform to adduser action 
  */
-function submitUserForm() {
+function submitUserForm(baseurl) {
     var status = validateForm();
     if(status){
         $.ajax({
             type:'POST',
-            url: '../home/adduser/',
+            url: baseurl + '/home/adduser/',
             data:$('#adduserform').serialize(), 
             success: function(response) {
                 tableMsg(response);
-                $('#userTable').load('../home/updateusertable');
+                $('#userTable').load(baseurl + '/home/updateusertable');
                 $( '#adduserform' ).each(function(){
                     this.reset();
                 });
@@ -47,13 +46,13 @@ function tableMsg(data) {
     $('#statusMsg').hide();
     switch (Number(details.status)) {
         case 0:
-            $('#statusMsg').css("background-color", "red");
+            $('#statusMsg').css({"background-color":"#ff6666", "outline":"1px solid #ff0000"});
             break;
         case 1:
-             $('#statusMsg').css("background-color", "green");
+             $('#statusMsg').css({"background-color":"#66ff66", "outline":"1px solid #19ff19"});
             break;
     }
-    $('#statusMsg').html('<p>' + details.msg + '</p>');
+    $('#statusMsg').html(details.msg);
     $('#statusMsg').show().delay(5000).fadeOut(2000);
 }
 
