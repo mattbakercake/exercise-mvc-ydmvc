@@ -5,6 +5,6 @@ interface Repository_Interface {
     public function findById($id);
     public function create($params);
     public function update();
-    public function destroy();
+    public function destroy($id);
 }
 

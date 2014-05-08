@@ -30,6 +30,12 @@ class Home_Controller extends Controller {
         return $result;      
     }
     
+    public function deleteuser() {
+        if (isset($this->_params[0])) {
+            $this->_model->deleteuser($this->_params[0]);
+        }
+    }
+    
     public function updateusertable() {
         $users = new User();
         $userData = $users->findAll();

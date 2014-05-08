@@ -70,5 +70,17 @@ class Home extends Model{
        }
  
     }
+    
+    public function deleteuser($id) {
+        $user = new User();
+        $user->setId($id);
+        $success = $user->destroy();
+        
+        if ($success) {
+           echo '{"status" : "1", "msg" : "User Deleted Successfully"}';
+       } else {
+           echo '{"status" : "0", "msg" : "There was a problem deleting user"}';
+       }
+    }
 }
 ?>

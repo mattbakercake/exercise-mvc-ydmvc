@@ -21,11 +21,11 @@ function submitUserForm(baseurl) {
     if(status){
         $.ajax({
             type:'POST',
-            url: baseurl + '/home/adduser/',
+            url: base_url + '/home/adduser/',
             data:$('#adduserform').serialize(), 
             success: function(response) {
                 tableMsg(response);
-                $('#userTable').load(baseurl + '/home/updateusertable');
+                $('#userTable').load(base_url + '/home/updateusertable');
                 $( '#adduserform' ).each(function(){
                     this.reset();
                 });
@@ -77,5 +77,19 @@ function validateForm() {
     return status;
 }
 
-
+function deleteuser(id) {
+    $.ajax({
+            type:'POST',
+            url: base_url + '/home/deleteuser/' + id, 
+            success: function(response) {
+                tableMsg(response);
+                $('#userTable').load(base_url + '/home/updateusertable');
+            },
+            error: function(jqXHR, exception) {
+                alert('query not submitted - Ajax Error: ' + exception);
+            }
+        });
+        
+        return false;
+}
 

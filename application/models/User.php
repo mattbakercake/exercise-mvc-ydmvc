@@ -68,6 +68,12 @@ class User extends Model {
         
         return $result;
     }
+    
+    public function destroy() {
+        $result = $this->_repository->destroy($this->getId());
+        
+        return $result;
+    }
 
     
 }

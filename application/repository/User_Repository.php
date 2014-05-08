@@ -55,8 +55,15 @@ class User_Repository implements Repository_Interface{
         
     }
     
-    public function destroy() {
+    public function destroy($id) {
+        $this->db->initDB();
+        $sql = "DELETE FROM User WHERE id=?";
+        $query = $this->db->_dbHandle->prepare($sql);
+        $query->bindParam(1, $id, PDO::PARAM_INT);
+        $result = $query->execute();
+        $this->db->quitDB();
         
+        return $result;
     }
     
 }

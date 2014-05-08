@@ -1,8 +1,8 @@
 <table>
-    <tr><th>User Id</th><th>First name</th><th>Surname</th><th>Favourite Fruit</th></tr>
+    <tr><th></th><th>User Id</th><th>First name</th><th>Surname</th><th>Favourite Fruit</th></tr>
     <?php
     foreach ($partialData as $user) {
-        echo "<tr><td>$user[id]</td><td>$user[firstname]</td><td>$user[surname]</td><td>$user[fruit]</td></tr>";
+        echo "<tr><td><a href='deleteuser/$user[id]' onclick='javascript:return deleteuser($user[id]);'>delete</a></td><td>$user[id]</td><td>$user[firstname]</td><td>$user[surname]</td><td>$user[fruit]</td></tr>";
     }
     ?>
 </table>
