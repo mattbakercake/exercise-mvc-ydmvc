@@ -1,19 +1,35 @@
 <?php
 /**
- * Description of User_Repository
- *
- * @author Matt
+ * The User_Repository class implements the Repository_Interface interface
+ * it holds properties that abstract data access methods away from the model
+ * 
+ * @category Repository
+ * @version 0.1
+ * @since 09-05-2014
+ * @author Matt Baker <dev@mikesierra.net>
  */
 class User_Repository implements Repository_Interface{
     
-     protected $db;
+    /**
+     * Database object
+     * @var DB Object
+     */
+    protected $db;
     
+    /**
+     * constructor instantiates DB object if it doesn't exist
+     */
     function __construct() {
         if (!is_object($this->db)) {
             $this->db = new DB();
         }
     }
     
+    /**
+     * Public function select all Users from the database
+     * 
+     * @return array/assoc array
+     */
     public function findAll(){
         $this->db->initDB();
         $sql = "SELECT * FROM user";
@@ -24,17 +40,29 @@ class User_Repository implements Repository_Interface{
         return $result;
     }
     
+    /**
+     * public function selects user from db that matches id
+     * 
+     * @param int $id
+     * @return array/assoc array
+     */
     public function findById($id) {
         $this->db->initDB();
         $sql = "SELECT * FROM user WHERE id=?";
         $query = $this->db->_dbHandle->prepare($sql);
-        $query->bindParam(1, $id, PDO::PARAM_INT);
+        $query->bindParam(1, $id, PDO::PARAM_INT); //bind filtered value to sql
         $query->execute();
         $result =  $query->fetch();
         $this->db->quitDB();
         return $result;
     }
     
+    /**
+     * public function creates a new user record
+     * 
+     * @param array $params
+     * @return bool
+     */
     public function create($params) {
         $this->db->initDB();
         $sql = "INSERT INTO User(firstname,surname,fruit) 
@@ -52,15 +80,24 @@ class User_Repository implements Repository_Interface{
         return $result;
     }
     
+    /**
+     * public function updates an existing database record
+     */
     public function update(){
         
     }
     
+    /**
+     * public function deletes a user record from the database
+     * 
+     * @param int $id
+     * @return bool
+     */
     public function destroy($id) {
         $this->db->initDB();
         $sql = "DELETE FROM User WHERE id=?";
         $query = $this->db->_dbHandle->prepare($sql);
-        $query->bindParam(1, $id, PDO::PARAM_INT);
+        $query->bindParam(1, $id, PDO::PARAM_INT); //bind filtered val to sql
         $result = $query->execute();
         $this->db->quitDB();
         

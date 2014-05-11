@@ -1,7 +1,6 @@
 <?php
 /**
- * Description of DB
- *
+ * DB class creates/destroys db specific connection handle
  * @author Matt
  */
 class DB {

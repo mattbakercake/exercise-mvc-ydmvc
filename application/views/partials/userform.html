@@ -1,5 +1,5 @@
 <div>
-    <form id="adduserform" onSubmit='return submitUserForm();'>
+    <form id="adduserform" action="../home/adduser" onSubmit='return submitUserForm();' method="post">
         <label for="firstname">Firstname: </label>
         <input type="text" id="firstname" name="firstname" /><span id="fnerror" class="errormsg"></span><br/>
         <label for="surname">Surname:</label>

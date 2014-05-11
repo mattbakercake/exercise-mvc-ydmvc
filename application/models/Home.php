@@ -83,7 +83,7 @@ class Home extends Model{
        $user->setFirstname(filter_var($data['firstname'], FILTER_SANITIZE_STRING));
        $user->setSurname(filter_var($data['surname'], FILTER_SANITIZE_STRING));
        $user->setFruit($data['fruit']);
-       
+      
        if ($user->getFirstname() != '' && $user->getSurname() != '' && $user->getFruit() != '') {
            $success = $user->create(); //if all properties set create user
        } else {
@@ -96,7 +96,7 @@ class Home extends Model{
        } else {
            echo '{"status" : "0", "msg" : "There was a problem adding user"}';
        }
- 
+       
     }
     
     /**

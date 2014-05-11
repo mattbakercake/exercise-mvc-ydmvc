@@ -46,6 +46,7 @@ class Home_Controller extends Controller {
      */
     public function adduser() {
         $userData = $_POST;
+
         $result = $this->_model->saveuser($userData); //call model method
         return $result; //return result to calling function
     }

@@ -8,8 +8,8 @@
  * It contains methods and properties common to all models
  * 
  * @category Core
- * @version 0.1
- * @since 26-02-2013
+ * @version 0.2
+ * @since 09-05-2014
  * @author Matt Baker <dev@mikesierra.net>
  */
 abstract class Model {
