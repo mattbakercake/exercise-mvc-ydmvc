@@ -21,7 +21,7 @@ function submitUserForm(baseurl) {
     if(status){
         $.ajax({
             type:'POST',
-            url: base_url + '/home/adduser/',
+            url: base_url + '/home/ajaxadduser/',
             data:$('#adduserform').serialize(), 
             success: function(response) {
                 tableMsg(response);
@@ -77,10 +77,10 @@ function validateForm() {
     return status;
 }
 
-function deleteuser(id) {
+function ajaxdeleteuser(id) {
     $.ajax({
             type:'POST',
-            url: base_url + '/home/deleteuser/' + id, 
+            url: base_url + '/home/ajaxdeleteuser/' + id, 
             success: function(response) {
                 tableMsg(response);
                 $('#userTable').load(base_url + '/home/updateusertable');

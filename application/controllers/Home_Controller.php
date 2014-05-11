@@ -37,6 +37,21 @@ class Home_Controller extends Controller {
     }
     
     /**
+     * Controller action for requests to /home/ajaxadduser 
+     * Public function grabs POST data and sends it to the model method to add
+     * a new user record returning the status result
+     * 
+     * Called by AJAX function submitUserForm() in script.js
+     * 
+     */
+    public function ajaxadduser() {
+        $userData = $_POST;
+
+        $result = $this->_model->ajaxsaveuser($userData); //call model method
+        return $result; //return result to calling function
+    }
+    
+    /**
      * Controller action for requests to /home/adduser 
      * Public function grabs POST data and sends it to the model method to add
      * a new user record returning the status result
@@ -52,7 +67,18 @@ class Home_Controller extends Controller {
     }
     
     /**
-     * Controller action for requests to /home/deleteuser 
+     * Controller action for requests to /home/ajaxdeleteuser called via JS
+     * Public function looks for a parameter in the url and calls
+     * model method with it to delete a user record.
+     */
+    public function ajaxdeleteuser() {
+        if (isset($this->_params[0])) { //if param set
+            $this->_model->ajaxdeleteuser($this->_params[0]); //call model method
+        }
+    }
+    
+    /**
+     * Controller action for requests to /home/deleteuser called when JS disabled
      * Public function looks for a parameter in the url and calls
      * model method with it to delete a user record.
      */

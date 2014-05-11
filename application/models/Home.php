@@ -74,9 +74,11 @@ class Home extends Model{
      * Public function checks user form completed and adds new user record
      * 
      * Called by AJAX function submitUserForm() via controller
+     * 
+     * echos JSON status object
      *
      */
-    public function saveuser($data) {
+    public function ajaxsaveuser($data) {
        $user = new User(); //instantiate new user object
        
        //set user properties with form data, using filters to sanitize user input
@@ -100,12 +102,44 @@ class Home extends Model{
     }
     
     /**
+     * Public function checks user form completed and adds new user record
+     * called by web form when javascript disabled
+     * 
+     * @returns string $message (status of request to view)
+     *
+     */
+    public function saveuser($data) {
+       $user = new User(); //instantiate new user object
+       
+       //set user properties with form data, using filters to sanitize user input
+       $user->setFirstname(filter_var($data['firstname'], FILTER_SANITIZE_STRING));
+       $user->setSurname(filter_var($data['surname'], FILTER_SANITIZE_STRING));
+       $user->setFruit($data['fruit']);
+      
+       if ($user->getFirstname() != '' && $user->getSurname() != '' && $user->getFruit() != '') {
+           $success = $user->create(); //if all properties set create user
+       } else {
+          $success = false; // return false if properties not set
+       }
+       
+       //return result message
+       if ($success) {
+           $this->_view->setData('message', 'New user was successfully saved'); //send message to view
+           $this->_view->load('result.html'); //load view
+       } else {
+           $this->_view->setData('message', 'There was a problem saving the user');  //send message to view
+           $this->_view->load('result.html'); //load view
+       }
+       
+    }
+    
+    /**
      * Public function deletes user record
      * 
      * Called by AJAX function deleteuser() via controller
      *
      */
-    public function deleteuser($id) {
+    public function ajaxdeleteuser($id) {
         $user = new User(); //instantiate user object
         $user->findById($id); //set user
         
@@ -116,6 +150,27 @@ class Home extends Model{
            echo '{"status" : "1", "msg" : "User Deleted Successfully"}';
        } else {
            echo '{"status" : "0", "msg" : "There was a problem deleting user"}';
+       }
+    }
+    
+    /**
+     * Public function deletes user record
+     * called from user table when JS disabled
+     *
+     */
+    public function deleteuser($id) {
+        $user = new User(); //instantiate user object
+        $user->findById($id); //set user
+        
+        $success = $user->destroy(); //delete user
+        
+        //return JSON encoded object back to AJAX declaring status(true/false) and message
+        if ($success) {
+           $this->_view->setData('message','User deleted successfully');
+           $this->_view->load('result.html');
+       } else {
+           $this->_view->setData('message','There was a problem deleting the user');
+           $this->_view->load('result.html');
        }
     }
     
