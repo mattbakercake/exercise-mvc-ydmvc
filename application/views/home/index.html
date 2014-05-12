@@ -1,19 +1,29 @@
 <h1>Home Page</h1>
 
 <p>
-    This site is a simple demo of the MVC framework.  It contains a single default controller with two actions.
+    This site is a simple demo of the MVC framework.  It contains a single default controller 
+    (<span class="green">Home_Controller</span>).
 </p>
 
+<p>There are 3 models: <span class="blue">Home</span> (which belongs to the Home_Controller), 
+    <span class="blue">Fruit </span>(defines fruit properties and methods) and 
+    <span class="blue">User</span> (defines user properties and methods).</p>
+
 <p>
-    The default controller and action can be run by either visiting the root of the site 
+    The default controller and action (<span class="green">index()</span>) can be run by either 
+    visiting the root of the site 
     (<span class="green"><?php echo BASE_URL; ?></span>)or by specifying the controller and action in the 
     URL (<span class="green"><?php echo BASE_URL . '/home/index';?></span>).
 </p>
 <p>Use the navigation buttons above to trigger the different controller actions.</p>
 
 <p>
-The controller action for this page calls the model into action and dispatches this view. The model
-injects a variable into the view containing some data that can accessed in the view file:
+The controller action for this page calls a model method into action, which dispatches this view. 
+The model injects a variable into the view (<span class="blue">$this->_view->setData('variablename', $data);</span>) containing some data that can accessed in 
+ the view file (<span class="blue">echo $variablename;</span>):
 </p>
 
-<div id="databox"> Data injected to view from model: <span class="orange">Local Port = <?php echo $remotePort; ?></span></div>
+<div id="databox">
+    <p>Data injected to view from model: </p>
+    <p>Local Port = <?php echo $remotePort; ?></p>
+</div>
