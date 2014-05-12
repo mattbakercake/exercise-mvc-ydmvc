@@ -113,45 +113,58 @@ Params from the url (e.g. http://localhost/widget/show/123/456) are stored in an
 
 Interacting with the Database
 -----------------------------
-The model class in /application/ydmvc_core contains a few core sql methods, which are very basic at the moment and may need to be augmented.
-The insert method uses prepared statements and therefore placeholders for inserting actual data.
+Having done a bit of reading, and trying to interpret what I found, it seems that an increasingly popular 
+method for communicating with a data source is the use of the "Repository Pattern".  This abstracts 
+actual platform specific queries away from the model, meaning the model can contain business logic operations 
+without containing any code referencing a particular storage platform. The advantages of this are, that it
+makes it easier to move the application to a new storage platform e.g. SQLite rather than MySQL, and this
+approach makes it easier to unit test the model by sending fake/dummy data to it.  Moving to a new storage
+platform would involve editing the repository classes for the models rather than the models themselves.
 
-To interact with the db in your model:
+Each model that requires access to the data source has a class in the repository folder.  This class has the same name as the 
+model with the suffix "_Repository".  The respository needs to implement the Repository_Interface class:
 
-1)  create an sql statement and set it:
+        class Widget_Repository implements Repository_Interface {
+            public function findAll(){
+                //define findAll
+            }
 
-######Read from database
+            public function findById($id){
+                //define findById
+            }
 
-        $sql =  "Select
-                  u.id,
-                  u.firstname,
-                  u.surname,
-                  f.name
-                From
-                  User u
-                INNER JOIN
-                  Fruit AS f on u.fruit = f.id
-                ORDER BY u.id ASC";
+            public function create($params) {
+                //define create
+            }
 
-        $this->_setSql($sql);
+            public function update(){
+                //define update 
+            }
 
-######Create into database
+            public function destroy($id){
+                //define destroy
+            }
+        }
 
-        $sql = "INSERT INTO User 
-                (firstname,
-                surname,fruit) 
-                VALUES 
-                (:firstname,
-                :surname,:fruit)";
+By implementing the Repository_Interface interface, the repository class has to declare the 5 default
+functions shown above.  In addition it can define any further custom functions.
 
-       $this->_setSql($sql)
+So within the application you may have a view that displays all the widgets.  The controller action
+might call the displayAllWidgets() method from the widgets model, which needs to actually retrieve a list of
+widgets from the datasource apply any business logic to the list and sent it to the view.  within the 
+model you will get the list from the database by calling:
 
-*note placeholders in insert example
+        $this->_repository->findAll();
 
-2) Perform query and fetch the result:
-
-######Read from database 
-`$result = $this->_getAll();`
-
-######Create into the database 
-`$result = $this->_insertAll($data)`, where $data is an associative array with the key in each data-pair corresponding to the placeholder name e.g. array('firstname'='Joe', 'surname'='blogs', 'fruit' = 'banana')
+This method in the repository actually connects to the database using a db connection class, and performs
+the actual query:
+    
+        public function findAll(){
+            $this->db->initDB();
+            $sql = "SELECT * FROM widgets";
+            $query = $this->db->_dbHandle->prepare($sql);
+            $query->execute();
+            $result = $query->fetchAll();
+            $this->db->quitDB();
+            return $result;
+        }

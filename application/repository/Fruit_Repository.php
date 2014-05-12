@@ -8,7 +8,7 @@
  * @since 09-05-2014
  * @author Matt Baker <dev@mikesierra.net>
  */
-class Fruit_Repository {
+class Fruit_Repository implements Repository_Interface{
     
     /**
      * Database object
@@ -59,7 +59,7 @@ class Fruit_Repository {
     /**
      * public function creates new fruit record
      */
-    public function create() {
+    public function create($params) {
         //unused
     }
     
@@ -73,7 +73,7 @@ class Fruit_Repository {
     /**
      * public function deletes fruit record from DB
      */
-    public function destroy() {
+    public function destroy($id) {
         //unused
     }
     
