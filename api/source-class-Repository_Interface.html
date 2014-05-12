@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+	<meta name="robots" content="noindex" />
+
+	<title>File application/repository/Repository_Interface.php | ydmvc</title>
+
+	<script type="text/javascript" src="resources/combined.js?1889508232"></script>
+	<script type="text/javascript" src="elementlist.js?2651633409"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Autoload.html">Autoload</a></li>
+				<li><a href="class-Controller.html">Controller</a></li>
+				<li><a href="class-DB.html">DB</a></li>
+				<li><a href="class-Error.html">Error</a></li>
+				<li><a href="class-FrontController.html">FrontController</a></li>
+				<li><a href="class-Fruit.html">Fruit</a></li>
+				<li><a href="class-Fruit_Repository.html">Fruit_Repository</a></li>
+				<li><a href="class-Home.html">Home</a></li>
+				<li><a href="class-Home_Controller.html">Home_Controller</a></li>
+				<li><a href="class-Model.html">Model</a></li>
+				<li><a href="class-Request.html">Request</a></li>
+				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-User_Repository.html">User_Repository</a></li>
+				<li><a href="class-View.html">View</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li class="active"><a href="class-Repository_Interface.html">Repository_Interface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li>
+				<a href="class-Repository_Interface.html" title="Summary of Repository_Interface"><span>Class</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre><code><span id="1" class="l"><a class="l" href="#1"> 1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2"> 2: </a><span class="php-comment">/**
+</span></span><span id="3" class="l"><a class="l" href="#3"> 3: </a><span class="php-comment"> * The Repsitory_Interface class is an interface that defines methods that 
+</span></span><span id="4" class="l"><a class="l" href="#4"> 4: </a><span class="php-comment"> * all repository classes must implement
+</span></span><span id="5" class="l"><a class="l" href="#5"> 5: </a><span class="php-comment"> * 
+</span></span><span id="6" class="l"><a class="l" href="#6"> 6: </a><span class="php-comment"> * @category Repository
+</span></span><span id="7" class="l"><a class="l" href="#7"> 7: </a><span class="php-comment"> * @version 0.1
+</span></span><span id="8" class="l"><a class="l" href="#8"> 8: </a><span class="php-comment"> * @since 09-05-2014
+</span></span><span id="9" class="l"><a class="l" href="#9"> 9: </a><span class="php-comment"> * @author Matt Baker &lt;dev@mikesierra.net&gt;
+</span></span><span id="10" class="l"><a class="l" href="#10">10: </a><span class="php-comment"> */</span>
+</span><span id="11" class="l"><a class="l" href="#11">11: </a><span class="php-keyword1">interface</span> <a id="Repository_Interface" href="#Repository_Interface">Repository_Interface</a> {
+</span><span id="12" class="l"><a class="l" href="#12">12: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_findAll" href="#_findAll">findAll</a>();
+</span><span id="13" class="l"><a class="l" href="#13">13: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_findById" href="#_findById">findById</a>(<span class="php-var">$id</span>);
+</span><span id="14" class="l"><a class="l" href="#14">14: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_create" href="#_create">create</a>(<span class="php-var">$params</span>);
+</span><span id="15" class="l"><a class="l" href="#15">15: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_update" href="#_update">update</a>();
+</span><span id="16" class="l"><a class="l" href="#16">16: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_destroy" href="#_destroy">destroy</a>(<span class="php-var">$id</span>);
+</span><span id="17" class="l"><a class="l" href="#17">17: </a>}
+</span><span id="18" class="l"><a class="l" href="#18">18: </a>
+</span><span id="19" class="l"><a class="l" href="#19">19: </a></span></code></pre>
+
+	<div id="footer">
+		ydmvc API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

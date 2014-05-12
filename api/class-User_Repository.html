@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class User_Repository | ydmvc</title>
+
+	<script type="text/javascript" src="resources/combined.js?1889508232"></script>
+	<script type="text/javascript" src="elementlist.js?2651633409"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Autoload.html">Autoload</a></li>
+				<li><a href="class-Controller.html">Controller</a></li>
+				<li><a href="class-DB.html">DB</a></li>
+				<li><a href="class-Error.html">Error</a></li>
+				<li><a href="class-FrontController.html">FrontController</a></li>
+				<li><a href="class-Fruit.html">Fruit</a></li>
+				<li><a href="class-Fruit_Repository.html">Fruit_Repository</a></li>
+				<li><a href="class-Home.html">Home</a></li>
+				<li><a href="class-Home_Controller.html">Home_Controller</a></li>
+				<li><a href="class-Model.html">Model</a></li>
+				<li><a href="class-Request.html">Request</a></li>
+				<li><a href="class-User.html">User</a></li>
+				<li class="active"><a href="class-User_Repository.html">User_Repository</a></li>
+				<li><a href="class-View.html">View</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Repository_Interface.html">Repository_Interface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class User_Repository</h1>
+
+
+	<div class="description">
+	
+<p>The User_Repository class implements the Repository_Interface interface it
+holds properties that abstract data access methods away from the model</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>User_Repository</span></b>			
+			 implements 
+				<a href="class-Repository_Interface.html"><span>Repository_Interface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+				<b>Category:</b>
+				Repository<br />
+				<b>Author:</b>
+				Matt Baker &lt;<a
+href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
+				<b>Version:</b>
+				0.1<br />
+				<b>Since:</b>
+				09-05-2014<br />
+		<b>Located at</b> <a href="source-class-User_Repository.html#2-107" title="Go to source code">application/repository/User_Repository.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-User_Repository.html#19-26" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+<p>constructor instantiates DB object if it doesn't exist</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>constructor instantiates DB object if it doesn't exist</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="findAll" id="_findAll">
+
+		<td class="attributes"><code>
+			 public 
+			array/assoc
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_findAll">#</a>
+		<code><a href="source-class-User_Repository.html#28-41" title="Go to source code">findAll</a>( )</code>
+
+		<div class="description short">
+			
+<p>Public function select all Users from the database</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Public function select all Users from the database</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array/assoc</code><br>array<br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Repository_Interface.html#_findAll">Repository_Interface::findAll()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="findById" id="_findById">
+
+		<td class="attributes"><code>
+			 public 
+			array/assoc
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_findById">#</a>
+		<code><a href="source-class-User_Repository.html#43-58" title="Go to source code">findById</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>public function selects user from db that matches id</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>public function selects user from db that matches id</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd><code>integer</code><br>$id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array/assoc</code><br>array<br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Repository_Interface.html#_findById">Repository_Interface::findById()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="create" id="_create">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create">#</a>
+		<code><a href="source-class-User_Repository.html#60-81" title="Go to source code">create</a>( <span>array <var>$params</var></span> )</code>
+
+		<div class="description short">
+			
+<p>public function creates a new user record</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>public function creates a new user record</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd><code>array</code><br>$params</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Repository_Interface.html#_create">Repository_Interface::create()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update" id="_update">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update">#</a>
+		<code><a href="source-class-User_Repository.html#83-88" title="Go to source code">update</a>( )</code>
+
+		<div class="description short">
+			
+<p>public function updates an existing database record</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>public function updates an existing database record</p>
+
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Repository_Interface.html#_update">Repository_Interface::update()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="destroy" id="_destroy">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_destroy">#</a>
+		<code><a href="source-class-User_Repository.html#90-105" title="Go to source code">destroy</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>public function deletes a user record from the database</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>public function deletes a user record from the database</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd><code>integer</code><br>$id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Repository_Interface.html#_destroy">Repository_Interface::destroy()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="db" id="$db">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-DB.html">DB</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-User_Repository.html#13-17" title="Go to source code"><var>$db</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$db" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Database object</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Database object</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		ydmvc API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class View | ydmvc</title>
+
+	<script type="text/javascript" src="resources/combined.js?1889508232"></script>
+	<script type="text/javascript" src="elementlist.js?2651633409"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Autoload.html">Autoload</a></li>
+				<li><a href="class-Controller.html">Controller</a></li>
+				<li><a href="class-DB.html">DB</a></li>
+				<li><a href="class-Error.html">Error</a></li>
+				<li><a href="class-FrontController.html">FrontController</a></li>
+				<li><a href="class-Fruit.html">Fruit</a></li>
+				<li><a href="class-Fruit_Repository.html">Fruit_Repository</a></li>
+				<li><a href="class-Home.html">Home</a></li>
+				<li><a href="class-Home_Controller.html">Home_Controller</a></li>
+				<li><a href="class-Model.html">Model</a></li>
+				<li><a href="class-Request.html">Request</a></li>
+				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-User_Repository.html">User_Repository</a></li>
+				<li class="active"><a href="class-View.html">View</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Repository_Interface.html">Repository_Interface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class View</h1>
+
+
+	<div class="description">
+	
+<p>The View class is a base class from which all new views must extend.</p>
+
+<p>It contains methods and properties common to all models</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+				<b>Category:</b>
+				Core<br />
+				<b>Author:</b>
+				Matt Baker &lt;<a
+href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
+				<b>Version:</b>
+				0.1<br />
+				<b>Since:</b>
+				26-02-2013<br />
+		<b>Located at</b> <a href="source-class-View.html#3-134" title="Go to source code">application/ydmvc_core/View.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-View.html#42-49" title="Go to source code">__construct</a>( <span>String <var>$viewName</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Contructor sets object $viewFolder property so that html files can be read
+from the correct view folder</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Contructor sets object $viewFolder property so that html files can be read
+from the correct view folder</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$viewName</var></dt>
+					<dd><code>String</code><br>$viewName</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="load" id="_load">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_load">#</a>
+		<code><a href="source-class-View.html#51-90" title="Go to source code">load</a>( <span>string <var>$file</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Public function launches the specified view from the controller. Defaults to
+index.html of no file specified.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Public function launches the specified view from the controller. Defaults to
+index.html of no file specified.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$file</var></dt>
+					<dd><code>string</code><br>$file</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br />
+				</div>
+
+				<h4>Example</h4>
+				<div class="list">
+						$this-&gt;view-&gt;load('someview.html');<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setData" id="_setData">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setData">#</a>
+		<code><a href="source-class-View.html#92-103" title="Go to source code">setData</a>( <span>String <var>$key</var></span>, <span>Mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Public function injects data from controller to be used in the view</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Public function injects data from controller to be used in the view</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd><code>String</code><br>$key</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>Mixed</code><br>$value</dd>
+				</dl></div>
+
+
+
+				<h4>Example</h4>
+				<div class="list">
+						$this-&gt;view-&gt;setData('fruits' =&gt; array('apple','orange','pear'));<br />
+<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="partial" id="_partial">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_partial">#</a>
+		<code><a href="source-class-View.html#105-132" title="Go to source code">partial</a>( <span>String <var>$filename</var></span>, <span>Mixed <var>$partialData</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Public function allows complex view code e.g. forms or loops to be split out
+into view partial files and included in view to simplify code and flow. place
+file in folder called 'partials' in the Views folder. $partialData can be
+referenced in the partial file to access data passed to it</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Public function allows complex view code e.g. forms or loops to be split out
+into view partial files and included in view to simplify code and flow. place
+file in folder called 'partials' in the Views folder. $partialData can be
+referenced in the partial file to access data passed to it</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$filename</var></dt>
+					<dd><code>String</code><br>$filename Name of partial file</dd>
+					<dt><var>$partialData</var></dt>
+					<dd><code>Mixed</code><br>$partialData Data to be referenced in partial e.g. array or string</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br>A string containing the buffered output of the partial script<br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br />
+				</div>
+
+				<h4>Example&lt;br/&gt;</h4>
+				<div class="list">
+						##in html view file##<br />
+&lt;?php echo $this-&gt;partial('partialname.html',$fruits); ?&gt;<br />
+<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="_viewFolder" id="$_viewFolder">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-View.html#16-20" title="Go to source code"><var>$_viewFolder</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$_viewFolder" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>String containing name of the view for the controller</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>String containing name of the view for the controller</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="_file" id="$_file">
+		<td class="attributes"><code>
+			protected  
+			String
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-View.html#21-25" title="Go to source code"><var>$_file</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">&quot;index.html&quot;</span></code></td>
+		<td class="description"><div>
+			<a href="#$_file" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>String containing the name of the view file. Defaults to index.html</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>String containing the name of the view file. Defaults to index.html</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="_viewData" id="$_viewData">
+		<td class="attributes"><code>
+			protected  
+			Array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-View.html#26-30" title="Go to source code"><var>$_viewData</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$_viewData" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Array of arrays of data passed to the view</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Array of arrays of data passed to the view</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="title" id="$title">
+		<td class="attributes"><code>
+			public  
+			String
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-View.html#31-40" title="Go to source code"><var>$title</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$title" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>String containing HTML Title for view to be displayed in browser header. Set
+in controller or model</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>String containing HTML Title for view to be displayed in browser header. Set
+in controller or model</p>
+
+
+					<h4>Example</h4>
+					<div class="list">
+							$this-&gt;view-&gt;title = "A Title";<br />
+					</div>
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		ydmvc API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

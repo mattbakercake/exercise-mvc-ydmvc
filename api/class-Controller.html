@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Controller | ydmvc</title>
+
+	<script type="text/javascript" src="resources/combined.js?1889508232"></script>
+	<script type="text/javascript" src="elementlist.js?2651633409"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Autoload.html">Autoload</a></li>
+				<li class="active"><a href="class-Controller.html">Controller</a></li>
+				<li><a href="class-DB.html">DB</a></li>
+				<li><a href="class-Error.html">Error</a></li>
+				<li><a href="class-FrontController.html">FrontController</a></li>
+				<li><a href="class-Fruit.html">Fruit</a></li>
+				<li><a href="class-Fruit_Repository.html">Fruit_Repository</a></li>
+				<li><a href="class-Home.html">Home</a></li>
+				<li><a href="class-Home_Controller.html">Home_Controller</a></li>
+				<li><a href="class-Model.html">Model</a></li>
+				<li><a href="class-Request.html">Request</a></li>
+				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-User_Repository.html">User_Repository</a></li>
+				<li><a href="class-View.html">View</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Repository_Interface.html">Repository_Interface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Controller</h1>
+
+
+	<div class="description">
+	
+<p>The Controller class is a base class from which all new controllers must
+extend.</p>
+
+<p>It contains methods and properties common to all controllers and is
+responsible for instantiating model and view objects</p>
+
+	</div>
+
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Home_Controller.html">Home_Controller</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br />
+		
+		
+		
+
+				<b>Category:</b>
+				Core<br />
+				<b>Author:</b>
+				Matt Baker &lt;<a
+href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
+				<b>Version:</b>
+				0.2<br />
+				<b>Since:</b>
+				26-02-2013<br />
+		<b>Located at</b> <a href="source-class-Controller.html#5-147" title="Go to source code">application/ydmvc_core/Controller.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Controller.html#53-71" title="Go to source code">__construct</a>( <span>string <var>$action</var></span>, <span>array <var>$params</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Constructor instantiates model and view objects and calls the controller
+method to be run</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Constructor instantiates model and view objects and calls the controller
+method to be run</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$action</var></dt>
+					<dd><code>string</code><br>$action</dd>
+					<dt><var>$params</var></dt>
+					<dd><code>array</code><br>$params</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_loadModel" id="__loadModel">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__loadModel">#</a>
+		<code><a href="source-class-Controller.html#73-82" title="Go to source code">_loadModel</a>( )</code>
+
+		<div class="description short">
+			
+<p>Instantiates current model object</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Instantiates current model object</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_loadView" id="__loadView">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__loadView">#</a>
+		<code><a href="source-class-Controller.html#84-89" title="Go to source code">_loadView</a>( )</code>
+
+		<div class="description short">
+			
+<p>Instantiates current view object</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Instantiates current view object</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_runControllerAction" id="__runControllerAction">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__runControllerAction">#</a>
+		<code><a href="source-class-Controller.html#91-97" title="Go to source code">_runControllerAction</a>( <span>string <var>$action</var></span> )</code>
+
+		<div class="description short">
+			
+<p>runs controller method</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>runs controller method</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$action</var></dt>
+					<dd><code>string</code><br>$action</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="_model" id="$_model">
+		<td class="attributes"><code>
+			protected  
+			Object
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Controller.html#20-24" title="Go to source code"><var>$_model</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$_model" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Instance of model object for current request</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Instance of model object for current request</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="_view" id="$_view">
+		<td class="attributes"><code>
+			protected  
+			Object
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Controller.html#25-29" title="Go to source code"><var>$_view</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$_view" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Instance of view object for current request</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Instance of view object for current request</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="_params" id="$_params">
+		<td class="attributes"><code>
+			public  
+			Array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Controller.html#30-34" title="Go to source code"><var>$_params</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$_params" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Array containing parameters passed to controller</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Array containing parameters passed to controller</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="actionName" id="$actionName">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Controller.html#46-50" title="Go to source code"><var>$actionName</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$actionName" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>String containing the name of the current controller action</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>String containing the name of the current controller action</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		ydmvc API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
