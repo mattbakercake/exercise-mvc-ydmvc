@@ -91,7 +91,7 @@ class Home extends Model{
        } else {
           $success = false; // return false if properties not set
        }
-       
+            
        //return JSON encoded object back to AJAX declaring status(true/false) and message
        if ($success) {
            echo '{"status" : "1", "msg" : "User Added Successfully"}';
