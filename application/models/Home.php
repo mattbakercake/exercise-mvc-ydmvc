@@ -36,20 +36,23 @@ class Home extends Model{
        $fruit = new Fruit(); //instantiate new fruit object
        
         if(!empty($param) && is_int($param) ) { //if INT from url->controller
-            $this->_view->setData('heading', 'List Single User'); //send data to view
-            
+            $this->_view->setData('heading', 'List Single User'); //send data to view    
             //find user by id passed to function
             $user->findById($param);
             
             //get fruit properties by id
             $fruit->findById($user->getFruit());
-            
-            $userData = array(array( //create array of user data
-                'id' => $user->getId(),
-                'firstname' => $user->getFirstname(),
-                'surname' => $user->getSurname(),
-                'fruit' => $fruit->getName() //substitute fruit id for name
-            ));
+           
+            if ($user->getId() != "") { //if user exists
+                $userData = array(array( //create array of user data
+                    'id' => $user->getId(),
+                    'firstname' => $user->getFirstname(),
+                    'surname' => $user->getSurname(),
+                    'fruit' => $fruit->getName() //substitute fruit id for name
+                ));
+            } else {
+                $this->_view->setData('message','\'{"status" : "0", "msg" : "User NOT found!"}\'');
+            }
         } else { //INT NOT passed by controller
             $this->_view->setData('heading', 'List All Users'); //send data to view
             

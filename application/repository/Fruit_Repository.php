@@ -31,12 +31,17 @@ class Fruit_Repository implements Repository_Interface{
      * @return array/assoc array
      */
     public function findAll(){
-        $this->db->initDB();
-        $sql = "SELECT * FROM fruit";
-        $query = $this->db->_dbHandle->prepare($sql);
-        $query->execute();
-        $result = $query->fetchAll();
-        $this->db->quitDB();
+        try {
+            $this->db->initDB();
+            $sql = "SELECT * FROM fruit";
+            $query = $this->db->_dbHandle->prepare($sql);
+            $query->execute();
+            $result = $query->fetchAll();
+            $this->db->quitDB();
+        } catch (PDOException $e) {
+            $result = false;
+        }
+        
         return $result;
      }
     
@@ -47,12 +52,16 @@ class Fruit_Repository implements Repository_Interface{
      * @return array/assoc array
      */
     public function findById($id) {
-        $this->db->initDB();
-        $sql = "SELECT * FROM fruit WHERE id=" . $id;
-        $query = $this->db->_dbHandle->prepare($sql);
-        $query->execute();
-        $result = $query->fetch();
-        $this->db->quitDB();
+        try {
+            $this->db->initDB();
+            $sql = "SELECT * FROM fruit WHERE id=" . $id;
+            $query = $this->db->_dbHandle->prepare($sql);
+            $query->execute();
+            $result = $query->fetch();
+            $this->db->quitDB();
+        } catch (PDOException $e) {
+            $result = false;
+        }
         return $result;
     }
     

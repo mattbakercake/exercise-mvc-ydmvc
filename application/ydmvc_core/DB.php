@@ -14,13 +14,10 @@ class DB {
     */
     public function initDB() {
         global $dsn; //set in settings.inc.php
-        try {
-            $this->_dbHandle = new PDO($dsn, DB_USERNAME, DB_PASSWORD);
-            $this->_dbHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch(PDOException $e) {
-            die('Database Connection Error: ' . $e->getMessage());
-           
-        }
+
+        $this->_dbHandle = new PDO($dsn, DB_USERNAME, DB_PASSWORD);
+        $this->_dbHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->_dbHandle->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
     
     /**
