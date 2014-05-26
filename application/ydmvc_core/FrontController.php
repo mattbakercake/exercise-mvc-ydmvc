@@ -4,17 +4,22 @@
  * requests and dispatching appropriate controllers
  * 
  * It determines whether controller/action/parameters have been passed to it 
- * and either sets these values or calls the Request Class to extract the values
- * from the url.  The run method dispatches the controller.
+ * and either sets these values or calls the Router class to extract the values
+ * from the url or serve a stored route.  The run method dispatches the controller.
  * 
  * @category Core
- * @version 0.2
- * @since 05-03-2013
+ * @version 0.3
+ * @since 26-05-2014
  * @author Matt Baker <dev@mikesierra.net> 
  * 
  */
 class FrontController {
     
+    /**
+     * The router object
+     * @var object
+     */  
+    private $_router;
     /**
      * The controller being called
      * @var string
@@ -50,18 +55,19 @@ class FrontController {
      */
     function __construct(array $options = array()) {
         
-        if (empty($options)) { //if no options passed to object
-            $request = new Request();//request object decodes url
         
+        if (empty($options)) { //if no options passed to object
+            //instantiate router object for request
+            $this->_router = new Router();    
             //set controller,action and value properties
-            if (!is_null($request->controller)) {
-                $this->_controller = $request->controller;
+            if (!is_null($this->_router->controller)) {
+                $this->_controller = $this->_router->controller;
              }
-            if (isset($request->action)) {
-                $this->_action = $request->action;
+            if (isset($this->_router->action)) {
+                $this->_action = $this->_router->action;
             }
-            if (isset($request->params)) {
-                $this->_params = $request->params;
+            if (isset($this->_router->params)) {
+                $this->_params = $this->_router->params;
             }
         } else { //if options have been passed to object set them
            if (isset($options['controller'])) {
