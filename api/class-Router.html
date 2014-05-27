@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Router | ydmvc</title>
+
+	<script type="text/javascript" src="resources/combined.js?1889508232"></script>
+	<script type="text/javascript" src="elementlist.js?3394681292"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Autoload.html">Autoload</a></li>
+				<li><a href="class-Controller.html">Controller</a></li>
+				<li><a href="class-DB.html">DB</a></li>
+				<li><a href="class-Error.html">Error</a></li>
+				<li><a href="class-FrontController.html">FrontController</a></li>
+				<li><a href="class-Fruit.html">Fruit</a></li>
+				<li><a href="class-Fruit_Repository.html">Fruit_Repository</a></li>
+				<li><a href="class-Home.html">Home</a></li>
+				<li><a href="class-Home_Controller.html">Home_Controller</a></li>
+				<li><a href="class-Model.html">Model</a></li>
+				<li class="active"><a href="class-Router.html">Router</a></li>
+				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-User_Repository.html">User_Repository</a></li>
+				<li><a href="class-View.html">View</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Repository_Interface.html">Repository_Interface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Router</h1>
+
+
+	<div class="description">
+	
+<p>The Router class serves stored routes and parameters or parses the url to
+extract the controller,action and any parameters being requested</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+				<b>Author:</b>
+				Matt Baker &lt;<a
+href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
+				<b>Version:</b>
+				0.1<br />
+				<b>Since:</b>
+				26-05-2014<br />
+		<b>Located at</b> <a href="source-class-Router.html#2-258" title="Go to source code">application/ydmvc_core/Router.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Router.html#49-64" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+<p>Constructor grabs defined routes from routes.php, stores the request URI and
+then determines whether the current request matches a stored route.
+Controller/action and params are passed back to the front controller</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Constructor grabs defined routes from routes.php, stores the request URI and
+then determines whether the current request matches a stored route.
+Controller/action and params are passed back to the front controller</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setRoutes" id="_setRoutes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setRoutes">#</a>
+		<code><a href="source-class-Router.html#83-88" title="Go to source code">setRoutes</a>( <span>mixed <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Stores route declaration in array</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Stores route declaration in array</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addRoute" id="_addRoute">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addRoute">#</a>
+		<code><a href="source-class-Router.html#90-129" title="Go to source code">addRoute</a>( <span>string <var>$uri</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$route</var> = <span class="php-keyword1">NULL</span></span>, <span>array <var>$filters</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Adds a stored route to the router object. Accepts three parameters: $uri is a
+URI string that can contain placeholders (with leading ':') that represent
+parameter values. $route is an associative array containing 3 values (controller
+- string, action - string, params - array of parameter values). $filter is an
+optional array containing associative key=&gt;value pairs that match placeholder
+names to regex filters for values to be checked against.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Adds a stored route to the router object. Accepts three parameters: $uri is a
+URI string that can contain placeholders (with leading ':') that represent
+parameter values. $route is an associative array containing 3 values (controller
+- string, action - string, params - array of parameter values). $filter is an
+optional array containing associative key=&gt;value pairs that match placeholder
+names to regex filters for values to be checked against.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$uri</var></dt>
+					<dd><code>string</code><br>$uri</dd>
+					<dt><var>$route</var></dt>
+					<dd><code>array</code><br>$route</dd>
+					<dt><var>$filters</var></dt>
+					<dd><code>array</code><br>$filters</dd>
+				</dl></div>
+
+
+
+				<h4>Example</h4>
+				<div class="list">
+						$this-&gt;addRoute('/showuser/:1/:string',<br />
+array(<br />
+'controller'=&gt;'home',<br />
+'action'=&gt;'dbfetch',<br />
+'params'=&gt;array(2)<br />
+),<br />
+array(<br />
+'1'=&gt;'/^[0-9]+$/',<br />
+'string'=&gt;'/^string$/'<br />
+));<br />
+<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="controller" id="$controller">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Router.html#33-37" title="Go to source code"><var>$controller</var></a>
+		</td>
+		<td class="value"><code>DEFAULT_CONTROLLER</code></td>
+		<td class="description"><div>
+			<a href="#$controller" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>controller name</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>controller name</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="action" id="$action">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Router.html#38-42" title="Go to source code"><var>$action</var></a>
+		</td>
+		<td class="value"><code>DEFAULT_ACTION</code></td>
+		<td class="description"><div>
+			<a href="#$action" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>action name</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>action name</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="params" id="$params">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Router.html#43-47" title="Go to source code"><var>$params</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$params" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>parameters</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>parameters</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		ydmvc API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
