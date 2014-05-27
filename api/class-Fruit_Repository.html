@@ -7,7 +7,7 @@
 	<title>Class Fruit_Repository | ydmvc</title>
 
 	<script type="text/javascript" src="resources/combined.js?1889508232"></script>
-	<script type="text/javascript" src="elementlist.js?2651633409"></script>
+	<script type="text/javascript" src="elementlist.js?3394681292"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -44,7 +44,7 @@
 				<li><a href="class-Home.html">Home</a></li>
 				<li><a href="class-Home_Controller.html">Home_Controller</a></li>
 				<li><a href="class-Model.html">Model</a></li>
-				<li><a href="class-Request.html">Request</a></li>
+				<li><a href="class-Router.html">Router</a></li>
 				<li><a href="class-User.html">User</a></li>
 				<li><a href="class-User_Repository.html">User_Repository</a></li>
 				<li><a href="class-View.html">View</a></li>
@@ -104,6 +104,15 @@ holds properties that abstract data access methods away from the model</p>
 
 	</div>
 
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Fruit_Repository</span></b>			
+			 implements 
+				<a href="class-Repository_Interface.html"><span>Repository_Interface</span></a>
+			
+			
+		</dd>
+	</dl>
 
 
 
@@ -127,7 +136,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 				0.1<br />
 				<b>Since:</b>
 				09-05-2014<br />
-		<b>Located at</b> <a href="source-class-Fruit_Repository.html#2-80" title="Go to source code">application/repository/Fruit_Repository.php</a><br />
+		<b>Located at</b> <a href="source-class-Fruit_Repository.html#2-89" title="Go to source code">application/repository/Fruit_Repository.php</a><br />
 	</div>
 
 
@@ -178,7 +187,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_findAll">#</a>
-		<code><a href="source-class-Fruit_Repository.html#28-41" title="Go to source code">findAll</a>( )</code>
+		<code><a href="source-class-Fruit_Repository.html#28-46" title="Go to source code">findAll</a>( )</code>
 
 		<div class="description short">
 			
@@ -201,6 +210,8 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Repository_Interface.html#_findAll">Repository_Interface::findAll()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -215,7 +226,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_findById">#</a>
-		<code><a href="source-class-Fruit_Repository.html#43-57" title="Go to source code">findById</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-Fruit_Repository.html#48-66" title="Go to source code">findById</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -243,6 +254,8 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Repository_Interface.html#_findById">Repository_Interface::findById()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -257,7 +270,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Fruit_Repository.html#59-64" title="Go to source code">create</a>( )</code>
+		<code><a href="source-class-Fruit_Repository.html#68-73" title="Go to source code">create</a>( <span>mixed <var>$params</var></span> )</code>
 
 		<div class="description short">
 			
@@ -276,6 +289,8 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Repository_Interface.html#_create">Repository_Interface::create()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -290,7 +305,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Fruit_Repository.html#66-71" title="Go to source code">update</a>( )</code>
+		<code><a href="source-class-Fruit_Repository.html#75-80" title="Go to source code">update</a>( )</code>
 
 		<div class="description short">
 			
@@ -309,6 +324,8 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Repository_Interface.html#_update">Repository_Interface::update()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -323,7 +340,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_destroy">#</a>
-		<code><a href="source-class-Fruit_Repository.html#73-78" title="Go to source code">destroy</a>( )</code>
+		<code><a href="source-class-Fruit_Repository.html#82-87" title="Go to source code">destroy</a>( <span>mixed <var>$id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -342,6 +359,8 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Repository_Interface.html#_destroy">Repository_Interface::destroy()</a></code></div>
 		</div>
 		</div></td>
 	</tr>

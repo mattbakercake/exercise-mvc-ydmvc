@@ -7,7 +7,7 @@
 	<title>Class Home_Controller | ydmvc</title>
 
 	<script type="text/javascript" src="resources/combined.js?1889508232"></script>
-	<script type="text/javascript" src="elementlist.js?2651633409"></script>
+	<script type="text/javascript" src="elementlist.js?3394681292"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -44,7 +44,7 @@
 				<li><a href="class-Home.html">Home</a></li>
 				<li class="active"><a href="class-Home_Controller.html">Home_Controller</a></li>
 				<li><a href="class-Model.html">Model</a></li>
-				<li><a href="class-Request.html">Request</a></li>
+				<li><a href="class-Router.html">Router</a></li>
 				<li><a href="class-User.html">User</a></li>
 				<li><a href="class-User_Repository.html">User_Repository</a></li>
 				<li><a href="class-View.html">View</a></li>
@@ -140,7 +140,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 				0.2<br />
 				<b>Since:</b>
 				09-05-2014<br />
-		<b>Located at</b> <a href="source-class-Home_Controller.html#2-75" title="Go to source code">application/controllers/Home_Controller.php</a><br />
+		<b>Located at</b> <a href="source-class-Home_Controller.html#2-101" title="Go to source code">application/controllers/Home_Controller.php</a><br />
 	</div>
 
 
@@ -219,6 +219,45 @@ function in the model to display a list of users</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="ajaxadduser" id="_ajaxadduser">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxadduser">#</a>
+		<code><a href="source-class-Home_Controller.html#39-52" title="Go to source code">ajaxadduser</a>( )</code>
+
+		<div class="description short">
+			
+<p>Controller action for requests to /home/ajaxadduser Public function grabs
+POST data and sends it to the model method to add a new user record returning
+the status result</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Controller action for requests to /home/ajaxadduser Public function grabs
+POST data and sends it to the model method to add a new user record returning
+the status result</p>
+
+<p>Called by AJAX function submitUserForm() in script.js</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="adduser" id="_adduser">
 
 		<td class="attributes"><code>
@@ -230,7 +269,7 @@ function in the model to display a list of users</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_adduser">#</a>
-		<code><a href="source-class-Home_Controller.html#39-52" title="Go to source code">adduser</a>( )</code>
+		<code><a href="source-class-Home_Controller.html#54-67" title="Go to source code">adduser</a>( )</code>
 
 		<div class="description short">
 			
@@ -258,6 +297,43 @@ status result</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="ajaxdeleteuser" id="_ajaxdeleteuser">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxdeleteuser">#</a>
+		<code><a href="source-class-Home_Controller.html#69-78" title="Go to source code">ajaxdeleteuser</a>( )</code>
+
+		<div class="description short">
+			
+<p>Controller action for requests to /home/ajaxdeleteuser called via JS Public
+function looks for a parameter in the url and calls model method with it to
+delete a user record.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Controller action for requests to /home/ajaxdeleteuser called via JS Public
+function looks for a parameter in the url and calls model method with it to
+delete a user record.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="deleteuser" id="_deleteuser">
 
 		<td class="attributes"><code>
@@ -269,21 +345,21 @@ status result</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_deleteuser">#</a>
-		<code><a href="source-class-Home_Controller.html#54-63" title="Go to source code">deleteuser</a>( )</code>
+		<code><a href="source-class-Home_Controller.html#80-89" title="Go to source code">deleteuser</a>( )</code>
 
 		<div class="description short">
 			
-<p>Controller action for requests to /home/deleteuser Public function looks for
-a parameter in the url and calls model method with it to delete a user
-record.</p>
+<p>Controller action for requests to /home/deleteuser called when JS disabled
+Public function looks for a parameter in the url and calls model method with it
+to delete a user record.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Controller action for requests to /home/deleteuser Public function looks for
-a parameter in the url and calls model method with it to delete a user
-record.</p>
+<p>Controller action for requests to /home/deleteuser called when JS disabled
+Public function looks for a parameter in the url and calls model method with it
+to delete a user record.</p>
 
 
 
@@ -306,7 +382,7 @@ record.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_updateusertable">#</a>
-		<code><a href="source-class-Home_Controller.html#65-73" title="Go to source code">updateusertable</a>( )</code>
+		<code><a href="source-class-Home_Controller.html#91-99" title="Go to source code">updateusertable</a>( )</code>
 
 		<div class="description short">
 			

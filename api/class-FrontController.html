@@ -7,7 +7,7 @@
 	<title>Class FrontController | ydmvc</title>
 
 	<script type="text/javascript" src="resources/combined.js?1889508232"></script>
-	<script type="text/javascript" src="elementlist.js?2651633409"></script>
+	<script type="text/javascript" src="elementlist.js?3394681292"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -44,7 +44,7 @@
 				<li><a href="class-Home.html">Home</a></li>
 				<li><a href="class-Home_Controller.html">Home_Controller</a></li>
 				<li><a href="class-Model.html">Model</a></li>
-				<li><a href="class-Request.html">Request</a></li>
+				<li><a href="class-Router.html">Router</a></li>
 				<li><a href="class-User.html">User</a></li>
 				<li><a href="class-User_Repository.html">User_Repository</a></li>
 				<li><a href="class-View.html">View</a></li>
@@ -103,8 +103,8 @@
 and dispatching appropriate controllers</p>
 
 <p>It determines whether controller/action/parameters have been passed to it and
-either sets these values or calls the Request Class to extract the values from
-the url. The run method dispatches the controller.</p>
+either sets these values or calls the Router class to extract the values from
+the url or serve a stored route. The run method dispatches the controller.</p>
 
 	</div>
 
@@ -128,10 +128,10 @@ the url. The run method dispatches the controller.</p>
 				Matt Baker &lt;<a
 href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 				<b>Version:</b>
-				0.2<br />
+				0.3<br />
 				<b>Since:</b>
-				05-03-2013<br />
-		<b>Located at</b> <a href="source-class-FrontController.html#2-134" title="Go to source code">application/ydmvc_core/FrontController.php</a><br />
+				26-05-2014<br />
+		<b>Located at</b> <a href="source-class-FrontController.html#2-140" title="Go to source code">application/ydmvc_core/FrontController.php</a><br />
 	</div>
 
 
@@ -149,7 +149,7 @@ href="mailto:dev&#64;mikesierra.net">dev&#64;<!---->mikesierra.net</a>&gt;<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-FrontController.html#34-78" title="Go to source code">__construct</a>( <span>array <var>$options</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-FrontController.html#39-84" title="Go to source code">__construct</a>( <span>array <var>$options</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			
@@ -203,7 +203,7 @@ $FrontController = new FrontController(array(<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_run">#</a>
-		<code><a href="source-class-FrontController.html#122-132" title="Go to source code">run</a>( )</code>
+		<code><a href="source-class-FrontController.html#128-138" title="Go to source code">run</a>( )</code>
 
 		<div class="description short">
 			
