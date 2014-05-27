@@ -111,6 +111,35 @@ where 'partialname.html is the partial file and $data is any data that the parti
 Params from the url (e.g. http://localhost/widget/show/123/456) are stored in an array, which can be accessed within the controller using `$this->_params`.
 (*Warning: These values will need to be sanitised within the controller or model prior to output to prevent malicious code execution).
 
+####Routing
+The router objects means that you can define custom URIs that point to a specified controller and action.  
+For example, imagine rather than  http://localhost/widget/show/123/456 to view the details of a 
+specific widget, you would rather use the URL structure http://website.com/showwidget/123/456. 
+
+Defining a custom route would allow you to do this using the existing widget controller/model 
+without sticking to the strict URL structure.
+
+Define custom routes in application/routes.php.  
+
+The declaration is `$this->addRoute();` and accepts 3 values:
+1)	uri (string) – the custom uri, which can contain placeholders (beginning ‘:’) to represent input parameters in the uri.
+2)	Route (array) – an associative array of three values: ‘controller’,’action’ and ‘params’(optional) that represent the controller/action (and fixed params if set) when the custom route is matched.
+3)	Filters (array)(optional) – an associative array of key => value pairs that match placeholder names and declare a regex filter that the value has to match.  If no filters are declared, the placeholders are simply replaced by the corresponding URI value in a matching route without checking.
+
+        $this->addRoute('/showwidget/:val1/:val2',
+                array(
+                        'controller'=>widget',
+                        'action'=>'show',
+                    ),
+                    array(
+                    'val1'=>'/^[0-9]{3}$/',
+                    'val2'=>'/^[0-9]{3}$/'
+                    ));
+
+In the case of the above route, if the URI is /showwidget with two 3-digit parameters, 
+then the route will match and the ‘show’ action of the ‘widget’ controller will be called 
+with the parameters.
+
 Interacting with the Database
 -----------------------------
 Having done a bit of reading, and trying to interpret what I found, it seems that an increasingly popular 
